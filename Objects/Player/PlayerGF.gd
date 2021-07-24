@@ -11,13 +11,8 @@ var motion = Vector2()
 var input_vector = Vector2()
 var mouse_position
 
-export var magazines: int = 7 # how many magazines does the player have
-export var magazine_capacity: int = 10 # how many bullets in a magazine
-export var current_magazine: int = 0 # track the bullets in the loaded magazine
-export var have_ammo: bool = false # does the player have ammo?
-
 func _ready():
-	_reload()
+	pass
 
 func _physics_process(delta):
 	var friction = false
@@ -64,32 +59,15 @@ func _process(delta):
 		if Input.is_action_just_pressed("fire"):
 			shoot()
 		if Input.is_action_just_pressed("reload"):
-			_reload()
-
-
+			pass
 
 # Mermi firlatma fonksyonu
 func shoot():
 	var bullet_instance = Bullet.instance()
-	if have_ammo: # only shoot if we have ammo
-		current_magazine -= 1 # take a bullet out of the magazine
-		bullet_instance.rotation = rotation
-		bullet_instance.global_position = $"Skeleton2D/YariGovde/UstGovde/Sag Kol/Sag El/silah/Position2D".global_position
-		get_parent().add_child(bullet_instance)
-		if current_magazine < 1: # if we've used the last bullet, reload.
-			_reload()
-	else:
-		print("out of ammo")
-	
-func _reload() -> void:
-	if magazines > 0: # if there are any magazines left, reload
-		have_ammo = true # we still have ammo
-		magazines -= 1 # but we have 1 less magazine
-		current_magazine = magazine_capacity # reload the current magazine
-		print("Reload - Magazines left ",  magazines)
-	else:
-		have_ammo = false # no more ammo
-	
+	bullet_instance.rotation = rotation
+	bullet_instance.global_position = $"Skeleton2D/YariGovde/UstGovde/Sag Kol/Sag El/silah/Position2D".global_position
+	get_parent().add_child(bullet_instance)
+
 func _process_animation():
 	# Ziplama ve dusme animasyonu
 	if is_on_floor():

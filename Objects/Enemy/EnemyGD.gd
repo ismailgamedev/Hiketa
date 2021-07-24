@@ -10,9 +10,9 @@ func _physics_process(delta):
 	
 	var playerPos = player.position.x
 	var enemyPos = position.x
-	var distance = abs(enemyPos-playerPos)
+	var distance = enemyPos.distance_to(playerPos)
 
-	if distance < 200:
+	if distance < 150:
 		if player:
 			var direction = (player.position - position).normalized()
 			if not is_on_floor():
