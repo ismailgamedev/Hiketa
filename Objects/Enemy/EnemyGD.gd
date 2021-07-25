@@ -8,6 +8,7 @@ const GRAVITY = 25
 onready var player = get_node("/root/Main/Player")
 # Kol kemigini degiskene atama
 onready var hand = get_node("Skeleton2D/YariGovde/UstGovde/Sag Kol")
+
 # AnimationPlayeri degiskene atama
 onready var animation_player = get_node("AnimationPlayer")
 
@@ -53,9 +54,9 @@ func movement():
 
 # Animasyon islemleri Fonksyonu
 func animation_prcess():
-	# Eger direction degiskeni 0.75 dan buyuk ise yani yuruyorsa animasyon oynatilir
-	# Ve eger -0.75 kucuk ise yani yuruyorsa animasyon oynatilir
-	if direction.x < -0.75 or direction.x > 0.75:
+	# Eger direction degiskeni 0.1 dan buyuk ise yani yuruyorsa animasyon oynatilir
+	# Ve eger -0.1 kucuk ise yani yuruyorsa animasyon oynatilir
+	if direction.x < -0.1 or direction.x > 0.1:
 		$AnimationPlayer.play("walk")
 	# direction 0 ise  idle animasyonu oynatilir
 	else:
