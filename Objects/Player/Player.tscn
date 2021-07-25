@@ -5,7 +5,7 @@
 [ext_resource path="res://Objects/Player/KarakterKemikleri.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 9.43842, 32.4374 )
+extents = Vector2( 7.02647, 32.4374 )
 
 [sub_resource type="AnimationNodeAnimation" id=2]
 animation = "idle"
@@ -581,18 +581,17 @@ tracks/8/keys = {
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -5.54126, -8.21269 )
+position = Vector2( -0.413544, 14.1969 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( -6.18718, -22.4096 )
 current = true
 process_mode = 0
 smoothing_enabled = true
 offset_v = -1.0
 
 [node name="polyons" type="Node2D" parent="."]
-position = Vector2( -6.18718, 24.4187 )
+position = Vector2( 0, 46.8283 )
 
 [node name="kafa" type="Polygon2D" parent="polyons"]
 position = Vector2( -15.9334, -70.2055 )
@@ -607,6 +606,7 @@ bones = [ NodePath("YariGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 [node name="sag bacak" type="Polygon2D" parent="polyons"]
 position = Vector2( -16.9101, -75.8876 )
 scale = Vector2( 1, 1.0094 )
+z_index = 1
 texture = ExtResource( 3 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 21.25, 43.4966, 16.4375, 43.2466, 16.625, 51.9341, 16.4375, 59.7466, 22.125, 59.9966, 21.8125, 52.1841 )
@@ -617,6 +617,7 @@ bones = [ NodePath("YariGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("Ya
 [node name="sol bacak" type="Polygon2D" parent="polyons"]
 position = Vector2( -15.0036, -75.2373 )
 scale = Vector2( 1.00777, 1.00025 )
+z_index = 1
 texture = ExtResource( 3 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 8.625, 60, 14.625, 59.875, 15.8065, 41.5555, 8.27527, 40.5557 )
@@ -692,7 +693,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
 bones = [ NodePath("YariGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sag Kol"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sag Kol/Sag El"), PoolRealArray( 1, 1, 1, 1, 1, 1 ), NodePath("YariGovde/UstGovde/Sol Kol"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sol Kol/Sol EL"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Kafa"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/Sol Bacak"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/Sol Bacak/Sol Ayak"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/Sag Bacak"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/Sag Bacak/Sag Ayak"), PoolRealArray( 0, 0, 0, 0, 0, 0 ) ]
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
-position = Vector2( -6.18718, 24.4187 )
+position = Vector2( 0, 46.8283 )
 rotation = 0.00256858
 
 [node name="YariGovde" type="Bone2D" parent="Skeleton2D"]
@@ -707,7 +708,7 @@ rest = Transform2D( 1, 0, 0, 1, 8.69901, -0.0863142 )
 default_length = 13.0
 
 [node name="Sag Kol" type="Bone2D" parent="Skeleton2D/YariGovde/UstGovde"]
-position = Vector2( 6.95069, 5.09221 )
+position = Vector2( 6.38506, 3.08031 )
 z_index = -1
 rest = Transform2D( 1, 0, 0, 1, 6.95089, 5.16955 )
 

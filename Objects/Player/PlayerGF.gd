@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-const Bullet = preload("res://Objects/Bullet.tscn")
-const Gravity = 25
+const BULLET = preload("res://Objects/Bullet/Bullet.tscn")
+const GRAVITY = 25
 const ACCELERATION = 1000
 const MAX_SPEED = 150
 const JUMP_HEIGHT = -450
@@ -15,20 +15,21 @@ func _ready():
 	pass
 
 func _physics_process(delta):
+	# Yer cekimi ve surtunme
 	var friction = false
-	motion.y += Gravity
+	motion.y += GRAVITY
 	input_vector = Vector2.ZERO
-	
 	# kol 90 sag sola donunce karakterin donmesi
-	if get_local_mouse_position().x < -35:
+	if get_local_mouse_position().x < -7.30:
 		$polyons.scale = Vector2(-1,1)
 		$Skeleton2D.scale =Vector2(-1,1)
-	if get_local_mouse_position().x > -35:
+	if get_local_mouse_position().x > 7.30:
 		$polyons.scale = Vector2(1,1)
 		$Skeleton2D.scale = Vector2(1,1)
 	
-	# Kolu mouse pozisyonuna gore dondurme 
+	# Fare pozisyonunu degiskene atama
 	mouse_position = get_global_mouse_position()
+	# Kolu mouse pozisyonuna gore dondurme 
 	$"Skeleton2D/YariGovde/UstGovde/Sag Kol".look_at(mouse_position)
 
 	# Sag Sola input alma
@@ -41,8 +42,8 @@ func _physics_process(delta):
 	else:
 		friction = true
 	
-	# Ziplama
 	if is_on_floor():
+		# Ziplama kodu
 		if Input.is_action_just_pressed("ui_up"):
 			motion.y = JUMP_HEIGHT
 			input_vector.y = 1
@@ -51,25 +52,30 @@ func _physics_process(delta):
 	else:
 		if friction == true:
 			motion.x = lerp(motion.x , 0 , 0.009)
+			
+	# Karakter hareket etmesi icin
 	motion = move_and_slide(motion , UP)
+	
+	# Animasyonlarin calismasi icin yapilan fonksyon
 	_process_animation()
 	
 func _process(delta):
-		#ates etme
+		# Ates Etme
 		if Input.is_action_just_pressed("fire"):
 			shoot()
+		# Sarjor doldurma
 		if Input.is_action_just_pressed("reload"):
 			pass
 
 # Mermi firlatma fonksyonu
 func shoot():
-	var bullet_instance = Bullet.instance()
+	var bullet_instance = BULLET.instance()
 	bullet_instance.rotation = rotation
 	bullet_instance.global_position = $"Skeleton2D/YariGovde/UstGovde/Sag Kol/Sag El/silah/Position2D".global_position
 	get_parent().add_child(bullet_instance)
 
 func _process_animation():
-	# Ziplama ve dusme animasyonu
+	# Ziplama Yurume ve dusme animasyonu 
 	if is_on_floor():
 		if input_vector.y > 0.75:
 			$AnimationPlayer.play("jumping")	
