@@ -47,6 +47,9 @@ func movement():
 	# Eger mesafe de degil ise direction degiskenin x ini 0 yapiyoruz
 	else:
 		direction.x = 0
+		
+	# Kaybola hatasini düzeltmek için yazdığım kod :) 
+	direction.y = position.y
 
 # Animasyon islemleri Fonksyonu
 func animation_prcess():
