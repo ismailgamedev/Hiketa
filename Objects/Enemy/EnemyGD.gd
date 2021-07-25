@@ -32,8 +32,7 @@ func movement():
 	var distance = abs(position.x - player.position.x)
 	
 	# Eger yerde degilse direction degiskenine yer cekimi uyguluyoruz 
-	if not is_on_floor():
-		direction.y += GRAVITY
+	direction.y += GRAVITY
 		
 	# Yurume kodu
 	move_and_slide(direction * WALK_SPEED)
@@ -69,7 +68,7 @@ func flip_enemy():
 	if flip.x > 0.1:
 		$Skeleton2D.scale = Vector2(1,1)
 		$polyons.scale = Vector2(1,1)
-	# Eger 0.1 den kucuk ise sala don
+	# Eger 0.1 den kucuk ise sa don
 	if flip.x < -0.1:
 		$Skeleton2D.scale = Vector2(-1,1)
 		$polyons.scale = Vector2(-1,1)
