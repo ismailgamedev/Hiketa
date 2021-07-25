@@ -4,8 +4,9 @@
 [ext_resource path="res://Objects/Player/PlayerGF.gd" type="Script" id=2]
 [ext_resource path="res://Objects/Player/KarakterKemikleri.png" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.02647, 32.4374 )
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 7.15412
+height = 55.3843
 
 [sub_resource type="AnimationNodeAnimation" id=2]
 animation = "idle"
@@ -581,7 +582,7 @@ tracks/8/keys = {
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.413544, 14.1969 )
+position = Vector2( -0.413544, 11.8436 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]

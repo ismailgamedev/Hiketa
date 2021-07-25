@@ -4,8 +4,9 @@
 [ext_resource path="res://Objects/Enemy/EnemyGD.gd" type="Script" id=2]
 [ext_resource path="res://Objects/Enemy/DusmanKemik;eri.png.png" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 9.11342, 30.8359 )
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 7.34453
+height = 46.9643
 
 [sub_resource type="Animation" id=2]
 resource_name = "falling"
@@ -559,8 +560,8 @@ tracks/8/keys = {
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.761626, 16.3374 )
-shape = SubResource( 7 )
+position = Vector2( -0.00370479, 16.5835 )
+shape = SubResource( 1 )
 
 [node name="polyons" type="Node2D" parent="."]
 position = Vector2( 0.202362, 47.6195 )
