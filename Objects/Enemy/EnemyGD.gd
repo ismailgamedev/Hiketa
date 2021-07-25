@@ -50,18 +50,3 @@ func _physics_process(delta):
 	# Kolu karakterin global pozisyonuna baktiriyoruz 
 	hand.look_at(player.global_position)
 	
-	if flip == true:
-		$Skeleton2D.scale = Vector2(1,1)
-		$polyons.scale = Vector2(1,1)
-	else:
-		$Skeleton2D.scale = Vector2(-1,1)
-		$polyons.scale = Vector2(-1,1)
-		
-	print($"Skeleton2D/YariGovde/UstGovde/Sag Kol".rotation_degrees)
-	if $"Skeleton2D/YariGovde/UstGovde/Sag Kol".rotation_degrees > 0:
-		flip = false
-	if $"Skeleton2D/YariGovde/UstGovde/Sag Kol".rotation_degrees < 0:
-		flip = true
-		
-
-

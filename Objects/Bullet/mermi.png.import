@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mermi.png-2c47d50893aae46f100430fa67cb3844.stex"
+path="res://.import/mermi.png-6418b4f332c33b7e1aafe3365b247cf2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/Player/mermi.png"
-dest_files=[ "res://.import/mermi.png-2c47d50893aae46f100430fa67cb3844.stex" ]
+source_file="res://Objects/Bullet/mermi.png"
+dest_files=[ "res://.import/mermi.png-6418b4f332c33b7e1aafe3365b247cf2.stex" ]
 
 [params]
 

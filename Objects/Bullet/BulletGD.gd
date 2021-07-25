@@ -16,7 +16,7 @@ func _physics_process(delta):
 
 # Ekrandan cikinca silinmesi icin
 func _on_VisibilityNotifier2D_screen_exited():
-	queue_free()
+	self.queue_free()
 
 
 	
