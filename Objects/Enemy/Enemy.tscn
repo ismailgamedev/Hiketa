@@ -853,7 +853,6 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 bones = [ NodePath("YariGovde"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sag Kol"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sag Kol/Sag El"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sol Kol"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sol Kol/Sol EL"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Kafa"), PoolRealArray( 1, 1, 1, 1 ), NodePath("YariGovde/Sol Bacak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/Sol Bacak/Sol Ayak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/Sag Bacak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/Sag Bacak/Sag Ayak"), PoolRealArray( 0, 0, 0, 0 ) ]
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
-visible = false
 position = Vector2( 0.202362, 47.6195 )
 rotation = 0.00256858
 
