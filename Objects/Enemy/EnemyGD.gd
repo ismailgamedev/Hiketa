@@ -3,6 +3,7 @@ extends KinematicBody2D
 # Hız ve yer çekimi degeri
 const WALK_SPEED = 100
 const GRAVITY = 25
+const BULLET = preload("res://Objects/Bullet/EnemyBullet.tscn")
 
 # Sahnedeki karakter sahnesine ulaşma
 onready var player = get_node("/root/Main/Player")
@@ -39,7 +40,7 @@ func movement():
 	move_and_slide(direction * WALK_SPEED)
 
 	# Mesafeyi kontrol etme
-	if distance < 200 and distance > 150:
+	if distance < 250 and distance > 100:
 		# Karakter pozisyonuna gore direction degiskeninin x degerini veriyoruz
 		if player:
 			direction.x = (player.position.x - position.x)
@@ -81,3 +82,12 @@ func flip_enemy():
 func hand_look():
 	# Kolu karakterin global pozisyonuna baktiriyoruz 
 	hand.look_at(player.global_position)	
+	
+func shoot():
+	var bullet_instance = BULLET.instance()
+	bullet_instance.rotation = rotation
+	bullet_instance.global_position = $"Skeleton2D/YariGovde/UstGovde/Sag Kol/Sag El/silah/Position2D".global_position
+	get_parent().add_child(bullet_instance)
+
+func _on_Timer_timeout():
+	shoot()

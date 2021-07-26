@@ -744,3 +744,9 @@ anims/idle = SubResource( 3 )
 anims/jumping = SubResource( 4 )
 anims/landing = SubResource( 5 )
 anims/walk = SubResource( 6 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
