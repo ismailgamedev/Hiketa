@@ -88,7 +88,7 @@ func hand_look():
 	hand.look_at(player.global_position)	
 	
 func shoot():
-	if distance < 250:
+	if distance < 250 and health > 0:
 		var bullet_instance = BULLET.instance()
 		bullet_instance.rotation = rotation
 		bullet_instance.global_position = $"Skeleton2D/YariGovde/UstGovde/Sag Kol/Sag El/silah/Position2D".global_position
@@ -100,9 +100,15 @@ func _on_Timer_timeout():
 func die_check():
 	if health <= 0:
 		health = 0
-		self.queue_free()
+		$AnimationPlayer.play("die")
+		$CollisionShape2D.disabled = true
 		set_physics_process(false)
 	
 func _on_HurtBox_area_entered(area):
 	if area.is_in_group("Bullet"):
 		health -= 10
+
+
+func _on_VisibilityNotifier2D_screen_exited():
+	if health <= 0:
+		self.queue_free()

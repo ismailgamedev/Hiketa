@@ -90,10 +90,10 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ -150.0, -122.975, -161.967 ]
+"values": [ -150.0, -122.975, -161.967, -138.408 ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Skeleton2D/YariGovde/UstGovde/Sol Kol/Sol EL:rotation_degrees")
@@ -105,7 +105,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ -33.2048, 24.0121, -23.0856, -27.2073 ]
+"values": [ -33.2048, 24.0121, -44.6001, -119.449 ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Skeleton2D/YariGovde/UstGovde/Sag Kol:rotation_degrees")
@@ -853,6 +853,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 bones = [ NodePath("YariGovde"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sag Kol"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sag Kol/Sag El"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sol Kol"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sol Kol/Sol EL"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Kafa"), PoolRealArray( 1, 1, 1, 1 ), NodePath("YariGovde/Sol Bacak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/Sol Bacak/Sol Ayak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/Sag Bacak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/Sag Bacak/Sag Ayak"), PoolRealArray( 0, 0, 0, 0 ) ]
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
+visible = false
 position = Vector2( 0.202362, 47.6195 )
 rotation = 0.00256858
 
@@ -863,7 +864,7 @@ rest = Transform2D( 1.6288e-05, -1, 1, 1.6288e-05, -0.0265465, -32.2447 )
 default_length = 2.0
 
 [node name="UstGovde" type="Bone2D" parent="Skeleton2D/YariGovde"]
-position = Vector2( 8.69901, -0.0863142 )
+position = Vector2( 6.8581, 0.0339947 )
 rest = Transform2D( 1, 0, 0, 1, 8.69901, -0.0863142 )
 default_length = 13.0
 
@@ -946,5 +947,10 @@ autostart = true
 position = Vector2( -0.078743, 16.5363 )
 shape = SubResource( 7 )
 
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 2.3411, 43.5087 )
+scale = Vector2( 4.96115, 0.443918 )
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
