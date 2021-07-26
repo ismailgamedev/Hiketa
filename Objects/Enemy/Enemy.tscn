@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Objects/Player/silah.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Enemy/EnemyGD.gd" type="Script" id=2]
@@ -556,6 +556,10 @@ tracks/8/keys = {
 "values": [ -33.2048 ]
 }
 
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 8.30372
+height = 47.9798
+
 [node name="Enemy" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
@@ -669,7 +673,7 @@ position = Vector2( 0.202362, 47.6195 )
 rotation = 0.00256858
 
 [node name="YariGovde" type="Bone2D" parent="Skeleton2D"]
-position = Vector2( -0.0329241, -34.7277 )
+position = Vector2( -0.0265465, -32.2447 )
 rotation = -1.57078
 rest = Transform2D( 1.6288e-05, -1, 1, 1.6288e-05, -0.0265465, -32.2447 )
 default_length = 2.0
@@ -699,7 +703,7 @@ rotation = -2.31431
 
 [node name="Sol Kol" type="Bone2D" parent="Skeleton2D/YariGovde/UstGovde"]
 position = Vector2( 6.1424, -5.27817 )
-rotation = -3.19208
+rotation = -2.61799
 rest = Transform2D( -0.866028, -0.499995, 0.499995, -0.866028, 6.1424, -5.27817 )
 default_length = 6.0
 
@@ -716,25 +720,25 @@ default_length = 10.0
 
 [node name="Sol Bacak" type="Bone2D" parent="Skeleton2D/YariGovde"]
 position = Vector2( -1.8594, -2.53429 )
-rotation = -2.77094
+rotation = -3.05771
 rest = Transform2D( -0.996484, -0.0837844, 0.0837844, -0.996484, -1.8594, -2.53429 )
 default_length = 15.0
 
 [node name="Sol Ayak" type="Bone2D" parent="Skeleton2D/YariGovde/Sol Bacak"]
 position = Vector2( 15.4414, 0.144152 )
-rotation = -0.0929174
+rotation = -0.0938507
 rest = Transform2D( 0.995599, -0.0937131, 0.0937131, 0.995599, 15.4414, 0.144152 )
 default_length = 14.0
 
 [node name="Sag Bacak" type="Bone2D" parent="Skeleton2D/YariGovde"]
 position = Vector2( -1.85934, 2.48073 )
-rotation = -3.66699
+rotation = -3.05771
 rest = Transform2D( -0.996484, -0.0837844, 0.0837844, -0.996484, -1.85934, 2.48073 )
 default_length = 15.0
 
 [node name="Sag Ayak" type="Bone2D" parent="Skeleton2D/YariGovde/Sag Bacak"]
 position = Vector2( 15.2739, -0.960582 )
-rotation = 1.34795
+rotation = -0.0938507
 rest = Transform2D( 0.995599, -0.0937131, 0.0937131, 0.995599, 15.2739, -0.960582 )
 default_length = 14.0
 
@@ -749,4 +753,11 @@ anims/walk = SubResource( 6 )
 wait_time = 0.5
 autostart = true
 
+[node name="HurtBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2( 0, 16.5363 )
+shape = SubResource( 7 )
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]

@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 # Hız ve yer çekimi degeri
-const WALK_SPEED = 100
+const WALK_SPEED = 200
 const GRAVITY = 25
 const BULLET = preload("res://Objects/Bullet/EnemyBullet.tscn")
 
@@ -17,12 +17,16 @@ var direction = Vector2.ZERO
 # Karakterin donmesi icin kullandigim degisken
 var flip = Vector2.ZERO
 
+var health = 100
+
+var distance = 0
+
 func _physics_process(delta):		
 	movement()
 	hand_look()
 	animation_prcess()
 	flip_enemy()
-
+	die_check()
 
 # Yurume kodu
 func movement():
@@ -31,7 +35,7 @@ func movement():
 	# cunku x ekseni eksi(-) ve arti(+) degeri alir 
 	# biz de mesafeyi olcmek icin eksi degerini arti degeri yapiyoruz
 	# Dusmanin x pozisyonunu - Karakterin x pozisyonunu = aralarindaki mesafe
-	var distance = abs(position.x - player.position.x)
+	distance = abs(position.x - player.position.x)
 	
 	# Eger yerde degilse direction degiskenine yer cekimi uyguluyoruz 
 	direction.y += GRAVITY
@@ -40,7 +44,7 @@ func movement():
 	move_and_slide(direction * WALK_SPEED)
 
 	# Mesafeyi kontrol etme
-	if distance < 250 and distance > 100:
+	if distance < 250:
 		# Karakter pozisyonuna gore direction degiskeninin x degerini veriyoruz
 		if player:
 			direction.x = (player.position.x - position.x)
@@ -84,10 +88,21 @@ func hand_look():
 	hand.look_at(player.global_position)	
 	
 func shoot():
-	var bullet_instance = BULLET.instance()
-	bullet_instance.rotation = rotation
-	bullet_instance.global_position = $"Skeleton2D/YariGovde/UstGovde/Sag Kol/Sag El/silah/Position2D".global_position
-	get_parent().add_child(bullet_instance)
+	if distance < 250 and distance > 100:
+		var bullet_instance = BULLET.instance()
+		bullet_instance.rotation = rotation
+		bullet_instance.global_position = $"Skeleton2D/YariGovde/UstGovde/Sag Kol/Sag El/silah/Position2D".global_position
+		get_parent().add_child(bullet_instance)
 
 func _on_Timer_timeout():
 	shoot()
+	
+func die_check():
+	if health <= 0:
+		health = 0
+		self.queue_free()
+		set_physics_process(false)
+	
+func _on_HurtBox_area_entered(area):
+	if area.is_in_group("Bullet"):
+		health -= 10
