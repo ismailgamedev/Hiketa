@@ -44,7 +44,7 @@ func movement():
 	move_and_slide(direction * WALK_SPEED)
 
 	# Mesafeyi kontrol etme
-	if distance < 250:
+	if distance < 250 and distance > 100:
 		# Karakter pozisyonuna gore direction degiskeninin x degerini veriyoruz
 		if player:
 			direction.x = (player.position.x - position.x)
@@ -88,7 +88,7 @@ func hand_look():
 	hand.look_at(player.global_position)	
 	
 func shoot():
-	if distance < 250 and distance > 100:
+	if distance < 250:
 		var bullet_instance = BULLET.instance()
 		bullet_instance.rotation = rotation
 		bullet_instance.global_position = $"Skeleton2D/YariGovde/UstGovde/Sag Kol/Sag El/silah/Position2D".global_position
