@@ -1,6 +1,6 @@
 extends Area2D
 
-onready var MAXSPEED = 18
+onready var MAXSPEED = 15
 onready var player_Position = Vector2.ZERO
 onready var direction = Vector2.ZERO
 onready var origin = self.global_position
