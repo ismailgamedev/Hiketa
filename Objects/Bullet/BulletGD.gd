@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed = 18
+var speed = 15
 var movement = Vector2()
 onready var mouse_pos = null
 

@@ -10,6 +10,7 @@ const UP = Vector2 ( 0 , -1 )
 var motion = Vector2()
 var input_vector = Vector2()
 var mouse_position
+var health = 100
 
 func _ready():
 	pass
@@ -59,6 +60,8 @@ func _physics_process(delta):
 	# Animasyonlarin calismasi icin yapilan fonksyon
 	_process_animation()
 	
+	die_check()
+	
 func _process(delta):
 		# Ates Etme
 		if Input.is_action_just_pressed("fire"):
@@ -66,6 +69,8 @@ func _process(delta):
 		# Sarjor doldurma
 		if Input.is_action_just_pressed("reload"):
 			pass
+			
+		$Interface/UI/HealthBar.value = health
 
 # Mermi firlatma fonksyonu
 func shoot():
@@ -90,3 +95,14 @@ func _process_animation():
 			$AnimationPlayer.play("falling")
 		elif motion.y -- 0:
 			$AnimationPlayer.play("landing")
+
+func die_check():
+	if health <= 0:
+		health = 0
+		$CollisionShape2D.disabled = true
+		set_physics_process(false)
+
+func _on_HurtBox_area_entered(area):
+	if area.is_in_group("EnemyBullet"):
+		health -= 1
+		$Interface/UI/HealthBar.value = health

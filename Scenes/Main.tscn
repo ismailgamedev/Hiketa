@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://TileSets/tileset-2.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/tileset-2.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Paralaxbackground/ParallaxBackground.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Enemy/Enemy.tscn" type="PackedScene" id=4]

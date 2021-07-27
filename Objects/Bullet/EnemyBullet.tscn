@@ -6,7 +6,9 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 1.61762
 
-[node name="EnemyBullet" type="Area2D"]
+[node name="EnemyBullet" type="Area2D" groups=[
+"EnemyBullet",
+]]
 script = ExtResource( 2 )
 
 [node name="mermi" type="Sprite" parent="."]

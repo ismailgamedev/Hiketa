@@ -8,7 +8,7 @@
 radius = 7.34453
 height = 46.9643
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=2]
 resource_name = "die"
 length = 0.6
 tracks/0/type = "value"
@@ -192,8 +192,7 @@ tracks/14/keys = {
 "values": [ Vector2( 7.86069, -0.570804 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "falling"
+[sub_resource type="Animation" id=3]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Skeleton2D/YariGovde/Sag Bacak:rotation_degrees")
@@ -292,7 +291,7 @@ tracks/7/keys = {
 "values": [ 12.4494 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Skeleton2D/YariGovde/UstGovde/Sol Kol:position")
@@ -415,8 +414,7 @@ tracks/9/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "jumping"
+[sub_resource type="Animation" id=5]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Skeleton2D/YariGovde/Sol Bacak/Sol Ayak:rotation_degrees")
@@ -515,8 +513,7 @@ tracks/7/keys = {
 "values": [ 0.0, 12.5584 ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "landing"
+[sub_resource type="Animation" id=6]
 length = 0.1
 loop = true
 tracks/0/type = "value"
@@ -628,7 +625,7 @@ tracks/8/keys = {
 "values": [ -89.9991 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 length = 1.2
 loop = true
 tracks/0/type = "value"
@@ -740,7 +737,7 @@ tracks/8/keys = {
 "values": [ -33.2048 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=7]
+[sub_resource type="CapsuleShape2D" id=8]
 radius = 8.30372
 height = 47.9798
 
@@ -929,12 +926,12 @@ rest = Transform2D( 0.995599, -0.093713, 0.093713, 0.995599, 15.2739, -0.960582 
 default_length = 14.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/die = SubResource( 8 )
-anims/falling = SubResource( 2 )
-anims/idle = SubResource( 3 )
-anims/jumping = SubResource( 4 )
-anims/landing = SubResource( 5 )
-anims/walk = SubResource( 6 )
+anims/die = SubResource( 2 )
+anims/falling = SubResource( 3 )
+anims/idle = SubResource( 4 )
+anims/jumping = SubResource( 5 )
+anims/landing = SubResource( 6 )
+anims/walk = SubResource( 7 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
@@ -944,11 +941,11 @@ autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2( -0.078743, 16.5363 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-position = Vector2( 2.3411, 43.5087 )
-scale = Vector2( 4.96115, 0.443918 )
+position = Vector2( -0.187295, 43.3214 )
+scale = Vector2( 0.775256, 0.443918 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
