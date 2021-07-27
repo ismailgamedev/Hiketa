@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Objects/Paralaxbackground/PeyzajArkaPlan.png" type="Texture" id=1]
-[ext_resource path="res://Objects/Paralaxbackground/ArkaDagalar.png" type="Texture" id=2]
-[ext_resource path="res://Objects/Paralaxbackground/Cimen.png" type="Texture" id=3]
-[ext_resource path="res://Objects/Paralaxbackground/OnDagalar.png" type="Texture" id=4]
+[ext_resource path="res://Paralaxbackground/PeyzajArkaPlan.png" type="Texture" id=1]
+[ext_resource path="res://Paralaxbackground/ArkaDagalar.png" type="Texture" id=2]
+[ext_resource path="res://Paralaxbackground/Cimen.png" type="Texture" id=3]
+[ext_resource path="res://Paralaxbackground/OnDagalar.png" type="Texture" id=4]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 

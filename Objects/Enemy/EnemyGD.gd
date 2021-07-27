@@ -85,10 +85,11 @@ func flip_enemy():
 # Elin Karakter pozisyonuna bakmasi
 func hand_look():
 	# Kolu karakterin global pozisyonuna baktiriyoruz 
-	hand.look_at(player.global_position)	
+	if player.health > 0:
+		hand.look_at(player.global_position)	
 	
 func shoot():
-	if distance < 250 and health > 0:
+	if distance < 250 and health > 0 and player.health > 0:
 		var bullet_instance = BULLET.instance()
 		bullet_instance.rotation = rotation
 		bullet_instance.global_position = $"Skeleton2D/YariGovde/UstGovde/Sag Kol/Sag El/silah/Position2D".global_position

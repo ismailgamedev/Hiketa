@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 const BULLET = preload("res://Objects/Bullet/Bullet.tscn")
+onready var _transition_rect := $Interface/UI/SceneTraslition
 const GRAVITY = 25
 const ACCELERATION = 1000
 const MAX_SPEED = 150
@@ -74,10 +75,11 @@ func _process(delta):
 
 # Mermi firlatma fonksyonu
 func shoot():
-	var bullet_instance = BULLET.instance()
-	bullet_instance.rotation = rotation
-	bullet_instance.global_position = $"Skeleton2D/YariGovde/UstGovde/Sag Kol/Sag El/silah/Position2D".global_position
-	get_parent().add_child(bullet_instance)
+	if health > 0:
+		var bullet_instance = BULLET.instance()
+		bullet_instance.rotation = rotation
+		bullet_instance.global_position = $"Skeleton2D/YariGovde/UstGovde/Sag Kol/Sag El/silah/Position2D".global_position
+		get_parent().add_child(bullet_instance)
 
 func _process_animation():
 	# Ziplama Yurume ve dusme animasyonu 
@@ -100,9 +102,15 @@ func die_check():
 	if health <= 0:
 		health = 0
 		$CollisionShape2D.disabled = true
+		$AnimationPlayer.play("death")
+		$Interface/UI/DeathPanel.visible = true
 		set_physics_process(false)
 
 func _on_HurtBox_area_entered(area):
 	if area.is_in_group("EnemyBullet"):
-		health -= 1
+		health -= 10
 		$Interface/UI/HealthBar.value = health
+
+
+func _on_TryAgainButton_pressed():
+	_transition_rect.transition_to("res://Scenes/Main.tscn")

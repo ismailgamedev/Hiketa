@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/OnDagalar.png-eb499a6c365e778ce3c6e215c8f4ff1f.stex"
+path="res://.import/OnDagalar.png-596a95df37fe7b0295a9cea06161faf8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/Paralaxbackground/OnDagalar.png"
-dest_files=[ "res://.import/OnDagalar.png-eb499a6c365e778ce3c6e215c8f4ff1f.stex" ]
+source_file="res://Paralaxbackground/OnDagalar.png"
+dest_files=[ "res://.import/OnDagalar.png-596a95df37fe7b0295a9cea06161faf8.stex" ]
 
 [params]
 

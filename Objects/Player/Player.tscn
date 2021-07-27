@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Objects/Player/silah.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Player/PlayerGF.gd" type="Script" id=2]
 [ext_resource path="res://Objects/Player/KarakterKemikleri.png" type="Texture" id=3]
 [ext_resource path="res://Objects/UI/HealthBar.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/UI/SceneTraslitior.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 7.15412
@@ -30,7 +31,273 @@ start_node = "Idle"
 [sub_resource type="AnimationNodeStateMachinePlayback" id=7]
 
 [sub_resource type="Animation" id=8]
-resource_name = "falling"
+resource_name = "death"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Skeleton2D/YariGovde:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -0.0265465, -32.2447 ), Vector2( -4.89398, -17.4281 ), Vector2( -2.30746, -5.9195 ), Vector2( -3.37236, -3.75606 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Skeleton2D/YariGovde:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -89.9991, -92.6275, -5.5483, -3.18656 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Skeleton2D/YariGovde/UstGovde:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -5.8224 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Skeleton2D/YariGovde/UstGovde:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 8.69901, -0.0863142 ), Vector2( 7.07402, -0.0821142 ), Vector2( 7.07402, -0.0821142 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Skeleton2D/YariGovde/UstGovde/Sag Kol:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.2, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 174.549, 162.639, 175.23, 178.894 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Skeleton2D/YariGovde/UstGovde/Sag Kol:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 6.95089, 5.16955 ), Vector2( 6.95089, 5.16955 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Skeleton2D/YariGovde/UstGovde/Sag Kol/Sag El:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 16.7391, 17.4505 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Skeleton2D/YariGovde/UstGovde/Sag Kol/Sag El:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 10.0762, -0.0260458 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Skeleton2D/YariGovde/UstGovde/Sol Kol:rotation_degrees")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.2, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -150.0, -153.71, -153.71, -180.661 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Skeleton2D/YariGovde/UstGovde/Sol Kol:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 6.1424, -5.27817 ), Vector2( 6.1424, -5.27817 ), Vector2( 6.1424, -5.27817 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Skeleton2D/YariGovde/UstGovde/Sol Kol/Sol EL:rotation_degrees")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.2, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -33.2048, -146.988, -67.6018, -15.2297 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Skeleton2D/YariGovde/UstGovde/Sol Kol/Sol EL:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 8.26425, -1.80801 ), Vector2( 8.26425, -1.80801 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Skeleton2D/YariGovde/UstGovde/Kafa:rotation_degrees")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 0.2, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 13.7027, 21.1989 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Skeleton2D/YariGovde/UstGovde/Kafa:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 10.8241, 0.169013 ), Vector2( 10.3606, 0.170211 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Skeleton2D/YariGovde/Sol Bacak:rotation_degrees")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.2, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -175.194, -175.194, -182.505, -195.6 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Skeleton2D/YariGovde/Sol Bacak:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1.8594, -2.53429 ), Vector2( -1.8594, -2.53429 ), Vector2( -1.8594, -2.53429 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Skeleton2D/YariGovde/Sol Bacak/Sol Ayak:rotation_degrees")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 0.2, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -5.37726, 90.9829, 33.2403, 22.7863 ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Skeleton2D/YariGovde/Sol Bacak/Sol Ayak:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 15.4414, 0.144152 ), Vector2( 15.4414, 0.144152 ), Vector2( 15.4414, 0.144152 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Skeleton2D/YariGovde/Sag Bacak:rotation_degrees")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0, 0.2, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -175.194, -256.145, -183.571 ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Skeleton2D/YariGovde/Sag Bacak:position")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0, 0.2, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1.85934, 2.48073 ), Vector2( -1.46583, 1.18995 ), Vector2( -1.46583, 1.18995 ) ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Skeleton2D/YariGovde/Sag Bacak/Sag Ayak:rotation_degrees")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0, 0.2, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -5.37726, 82.728, 34.6268, 26.9382 ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Skeleton2D/YariGovde/Sag Bacak/Sag Ayak:position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0, 0.2, 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 15.2739, -0.960582 ), Vector2( 15.2739, -0.960582 ), Vector2( 15.2739, -0.960582 ), Vector2( 15.2739, -0.960582 ) ]
+}
+
+[sub_resource type="Animation" id=9]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Skeleton2D/YariGovde/Sag Bacak:rotation_degrees")
@@ -129,7 +396,7 @@ tracks/7/keys = {
 "values": [ 12.4494 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Skeleton2D/YariGovde/UstGovde/Sol Kol:position")
@@ -252,8 +519,7 @@ tracks/9/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=10]
-resource_name = "jumping"
+[sub_resource type="Animation" id=11]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Skeleton2D/YariGovde/Sol Bacak/Sol Ayak:rotation_degrees")
@@ -352,8 +618,7 @@ tracks/7/keys = {
 "values": [ 0.0, 12.5584 ]
 }
 
-[sub_resource type="Animation" id=11]
-resource_name = "landing"
+[sub_resource type="Animation" id=12]
 length = 0.1
 loop = true
 tracks/0/type = "value"
@@ -465,7 +730,7 @@ tracks/8/keys = {
 "values": [ -89.9991 ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=13]
 length = 1.2
 loop = true
 tracks/0/type = "value"
@@ -577,7 +842,7 @@ tracks/8/keys = {
 "values": [ -33.2048 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=13]
+[sub_resource type="CapsuleShape2D" id=14]
 radius = 8.19659
 height = 56.5548
 
@@ -716,7 +981,8 @@ rest = Transform2D( 1, 0, 0, 1, 8.69901, -0.0863142 )
 default_length = 13.0
 
 [node name="Sag Kol" type="Bone2D" parent="Skeleton2D/YariGovde/UstGovde"]
-position = Vector2( 6.38506, 3.08031 )
+position = Vector2( 6.95089, 5.16955 )
+rotation = 3.04645
 z_index = -1
 rest = Transform2D( 1, 0, 0, 1, 6.95089, 5.16955 )
 
@@ -779,28 +1045,51 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/falling = SubResource( 8 )
-anims/idle = SubResource( 9 )
-anims/jumping = SubResource( 10 )
-anims/landing = SubResource( 11 )
-anims/walk = SubResource( 12 )
+anims/death = SubResource( 8 )
+anims/falling = SubResource( 9 )
+anims/idle = SubResource( 10 )
+anims/jumping = SubResource( 11 )
+anims/landing = SubResource( 12 )
+anims/walk = SubResource( 13 )
 
 [node name="HurtBox" type="Area2D" parent="."]
 position = Vector2( -0.140305, -1.68369 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2( -0.35936, 14.0108 )
-shape = SubResource( 13 )
+position = Vector2( -0.35936, 14.0019 )
+shape = SubResource( 14 )
 
 [node name="Interface" type="CanvasLayer" parent="."]
 
 [node name="UI" type="Control" parent="Interface"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HealthBar" parent="Interface/UI" instance=ExtResource( 4 )]
 
+[node name="SceneTraslition" parent="Interface/UI" instance=ExtResource( 5 )]
+
+[node name="DeathPanel" type="Control" parent="Interface/UI"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.297302
+margin_right = -0.297302
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TryAgainButton" type="Button" parent="Interface/UI/DeathPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Try Again"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
+[connection signal="pressed" from="Interface/UI/DeathPanel/TryAgainButton" to="." method="_on_TryAgainButton_pressed"]

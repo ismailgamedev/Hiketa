@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cimen.png-0c95c3408dc691797be834c801915362.stex"
+path="res://.import/ArkaDagalar.png-159fc7248861e3e996fff7153ffcb0fb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/Paralaxbackground/Cimen.png"
-dest_files=[ "res://.import/Cimen.png-0c95c3408dc691797be834c801915362.stex" ]
+source_file="res://Paralaxbackground/ArkaDagalar.png"
+dest_files=[ "res://.import/ArkaDagalar.png-159fc7248861e3e996fff7153ffcb0fb.stex" ]
 
 [params]
 
