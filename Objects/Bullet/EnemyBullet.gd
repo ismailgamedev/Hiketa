@@ -20,3 +20,7 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 
 	
+
+
+func _on_EnemyBullet_area_entered(area):
+	self.queue_free()
