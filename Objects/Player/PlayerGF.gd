@@ -108,7 +108,7 @@ func die_check():
 
 func _on_HurtBox_area_entered(area):
 	if area.is_in_group("EnemyBullet"):
-		health -= 10
+		health -= 1
 		$Interface/UI/HealthBar.value = health
 
 

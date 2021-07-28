@@ -75,6 +75,10 @@ reload={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_2="tilemap"
+
 [physics]
 
 common/enable_pause_aware_picking=true

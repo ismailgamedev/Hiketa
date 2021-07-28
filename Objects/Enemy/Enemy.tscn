@@ -944,8 +944,8 @@ position = Vector2( -0.078743, 16.5363 )
 shape = SubResource( 8 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-position = Vector2( -0.187295, 43.3214 )
-scale = Vector2( 0.775256, 0.443918 )
+position = Vector2( 0.421391, 43.3214 )
+scale = Vector2( 0.395996, 0.443918 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]

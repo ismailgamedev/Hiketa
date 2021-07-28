@@ -4,7 +4,6 @@ extends KinematicBody2D
 const WALK_SPEED = 200
 const GRAVITY = 25
 const BULLET = preload("res://Objects/Bullet/EnemyBullet.tscn")
-
 # Sahnedeki karakter sahnesine ulaşma
 onready var player = get_node("/root/Main/Player")
 # Kol kemigini degiskene atama
@@ -28,6 +27,7 @@ func _physics_process(delta):
 	flip_enemy()
 	die_check()
 
+
 # Yurume kodu
 func movement():
 	# Karakter ve Dusman arasindaki Mesafeyi ölçme 
@@ -41,10 +41,10 @@ func movement():
 	direction.y += GRAVITY
 		
 	# Yurume kodu
-	move_and_slide(direction * WALK_SPEED)
+	move_and_slide(direction  * WALK_SPEED) 
 
 	# Mesafeyi kontrol etme
-	if distance < 250 and distance > 100:
+	if distance < 300 and distance > 150:
 		# Karakter pozisyonuna gore direction degiskeninin x degerini veriyoruz
 		if player:
 			direction.x = (player.position.x - position.x)
@@ -52,7 +52,7 @@ func movement():
 			direction = direction.normalized() 
 	# Eger mesafe de degil ise direction degiskenin x ini 0 yapiyoruz
 	else:
-		direction.x = 0
+		direction.x = lerp(direction.x , 0 , 0.2)
 		
 	# Kaybola hatasini düzeltmek için yazdığım kod :) 
 	direction.y = position.y
@@ -103,7 +103,7 @@ func die_check():
 		health = 0
 		$AnimationPlayer.play("die")
 		$CollisionShape2D.disabled = true
-		set_physics_process(false)
+		set_physics_process(false)			
 	
 func _on_HurtBox_area_entered(area):
 	if area.is_in_group("Bullet"):
