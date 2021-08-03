@@ -935,7 +935,7 @@ anims/landing = SubResource( 6 )
 anims/walk = SubResource( 7 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.6
 autostart = true
 
 [node name="HurtBox" type="Area2D" parent="."]

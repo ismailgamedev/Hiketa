@@ -37,8 +37,9 @@ func movement():
 	# cunku x ekseni eksi(-) ve arti(+) degeri alir 
 	# biz de mesafeyi olcmek icin eksi degerini arti degeri yapiyoruz
 	# Dusmanin x pozisyonunu - Karakterin x pozisyonunu = aralarindaki mesafe
-	distance = abs(position.x - player.position.x)
 	
+	distance = abs(position.x - player.position.x)
+		
 	# Eger yerde degilse direction degiskenine yer cekimi uyguluyoruz 
 	direction.y += GRAVITY
 		
