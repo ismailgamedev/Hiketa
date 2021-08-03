@@ -412,11 +412,13 @@ position = Vector2( 57.8091, 192.634 )
 [node name="Bitkiler" type="TileMap" parent="."]
 tile_set = SubResource( 27 )
 cell_size = Vector2( 5, 5 )
+collision_use_kinematic = true
 format = 1
 
 [node name="Ground" type="TileMap" parent="."]
 tile_set = SubResource( 28 )
 cell_size = Vector2( 32, 32 )
+collision_use_kinematic = true
 collision_layer = 2
 collision_mask = 3
 format = 1

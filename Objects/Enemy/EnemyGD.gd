@@ -110,7 +110,7 @@ func die_check():
 	
 func _on_HurtBox_area_entered(area):
 	if area.is_in_group("Bullet"):
-		health -= 10
+		health -= 15
 
 
 func _on_VisibilityNotifier2D_screen_exited():
