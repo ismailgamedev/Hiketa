@@ -114,7 +114,5 @@ func _on_HurtBox_area_entered(area):
 
 
 func _on_TryAgainButton_pressed():
-	var scene = get_tree().get_current_scene()
-	print(scene)
 	get_tree().reload_current_scene()
 	
