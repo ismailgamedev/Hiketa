@@ -77,6 +77,7 @@ func _process(delta):
 func shoot():
 	if health > 0:
 		var bullet_instance = BULLET.instance()
+		$shoot.play()
 		bullet_instance.rotation = rotation
 		bullet_instance.global_position = $"Skeleton2D/YariGovde/UstGovde/Sag Kol/Sag El/silah/Position2D".global_position
 		get_parent().add_child(bullet_instance)
@@ -108,9 +109,12 @@ func die_check():
 
 func _on_HurtBox_area_entered(area):
 	if area.is_in_group("EnemyBullet"):
-		health -= 1
+		health -= 5
 		$Interface/UI/HealthBar.value = health
 
 
 func _on_TryAgainButton_pressed():
-	_transition_rect.transition_to("res://Scenes/Main.tscn")
+	var scene = get_tree().get_current_scene()
+	print(scene)
+	get_tree().reload_current_scene()
+	

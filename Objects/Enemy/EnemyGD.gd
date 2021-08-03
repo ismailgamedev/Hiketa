@@ -4,8 +4,7 @@ extends KinematicBody2D
 const WALK_SPEED = 200
 const GRAVITY = 25
 const BULLET = preload("res://Objects/Bullet/EnemyBullet.tscn")
-# Sahnedeki karakter sahnesine ulaşma
-onready var player = get_node("/root/Main/Player")
+export(NodePath) var player 
 # Kol kemigini degiskene atama
 onready var hand = get_node("Skeleton2D/YariGovde/UstGovde/Sag Kol")
 
@@ -19,6 +18,9 @@ var flip = Vector2.ZERO
 var health = 100
 
 var distance = 0
+
+func _ready():
+	player = get_node(player)
 
 func _physics_process(delta):		
 	movement()
@@ -91,6 +93,7 @@ func hand_look():
 func shoot():
 	if distance < 250 and health > 0 and player.health > 0:
 		var bullet_instance = BULLET.instance()
+		$shoot.play()
 		bullet_instance.rotation = rotation
 		bullet_instance.global_position = $"Skeleton2D/YariGovde/UstGovde/Sag Kol/Sag El/silah/Position2D".global_position
 		get_parent().add_child(bullet_instance)
