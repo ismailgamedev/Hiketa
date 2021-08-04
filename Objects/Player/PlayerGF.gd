@@ -64,22 +64,25 @@ func _physics_process(delta):
 	die_check()
 	
 func _process(delta):
-		# Ates Etme
-		if Input.is_action_just_pressed("fire"):
-			shoot()
-		# Sarjor doldurma
-		if Input.is_action_just_pressed("reload"):
-			pass
-			
+	
 		$Interface/UI/HealthBar.value = health
+		
+		# Ates Etme
+		shoot_input()
+
+func shoot_input():
+	
+	if Input.is_action_just_pressed("fire"):
+		shoot()	
 
 # Mermi firlatma fonksyonu
 func shoot():
 	if health > 0:
+		
 		var bullet_instance = BULLET.instance()
 		$shoot.play()
 		bullet_instance.rotation = rotation
-		bullet_instance.global_position = $"Skeleton2D/YariGovde/UstGovde/Sag Kol/Sag El/silah/Position2D".global_position
+		bullet_instance.global_position = $"Skeleton2D/YariGovde/UstGovde/Sag Kol/Sag El/silah".global_position	
 		get_parent().add_child(bullet_instance)
 
 func _process_animation():
