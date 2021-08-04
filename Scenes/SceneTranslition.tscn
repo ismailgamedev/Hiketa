@@ -1,116 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Sprites/tileset-2.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Horse/Horse.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Paralaxbackground/ParallaxBackground.tscn" type="PackedScene" id=3]
 
-[sub_resource type="ConvexPolygonShape2D" id=1]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=2]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=3]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=4]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
-
-[sub_resource type="ConvexPolygonShape2D" id=5]
-points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
-
-[sub_resource type="TileSet" id=6]
-0/name = "tileset-2.png 0"
-0/texture = ExtResource( 1 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 160, 160 )
-0/tile_mode = 2
-0/autotile/icon_coordinate = Vector2( 0, 0 )
-0/autotile/tile_size = Vector2( 32, 32 )
-0/autotile/spacing = 0
-0/autotile/occluder_map = [  ]
-0/autotile/navpoly_map = [  ]
-0/autotile/priority_map = [  ]
-0/autotile/z_index_map = [  ]
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 1 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 1, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 2 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 2, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 3 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 3, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 4 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 4, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 5 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-0/z_index = 0
-
-[sub_resource type="TileSet" id=7]
-0/name = "tileset-2.png 0"
-0/texture = ExtResource( 1 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 32, 160, 64 )
-0/tile_mode = 2
-0/autotile/icon_coordinate = Vector2( 0, 0 )
-0/autotile/tile_size = Vector2( 32, 32 )
-0/autotile/spacing = 0
-0/autotile/occluder_map = [  ]
-0/autotile/navpoly_map = [  ]
-0/autotile/priority_map = [  ]
-0/autotile/z_index_map = [  ]
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape_one_way = false
-0/shape_one_way_margin = 0.0
-0/shapes = [  ]
-0/z_index = 0
-
 [node name="SceneTranslition" type="Node2D"]
-
-[node name="Ground" type="TileMap" parent="."]
-tile_set = SubResource( 6 )
-cell_size = Vector2( 32, 32 )
-format = 1
-tile_data = PoolIntArray( 589798, 0, 4, 589799, 0, 0, 589800, 0, 0, 589801, 0, 0, 589802, 0, 0, 589803, 0, 0, 589804, 0, 0, 589805, 0, 0, 589806, 0, 0, 589807, 0, 0, 589808, 0, 0, 589809, 0, 0, 589810, 0, 0, 589811, 0, 0, 589812, 0, 0, 589813, 0, 0, 589814, 0, 0, 589815, 0, 0, 589816, 0, 0, 589817, 0, 0, 589818, 0, 0, 589819, 0, 0, 589820, 0, 0, 589821, 0, 0, 589822, 0, 0, 589823, 0, 1, 524288, 0, 1, 524289, 0, 1, 524290, 0, 1, 524291, 0, 1, 524292, 0, 1, 524293, 0, 1, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 1, 524298, 0, 1, 524299, 0, 1, 524300, 0, 1, 524301, 0, 1, 524302, 0, 0, 524303, 0, 0, 524304, 0, 196608, 524305, 0, 0, 524306, 0, 0, 524307, 0, 0, 524308, 0, 0, 524309, 0, 0, 524310, 0, 0, 524311, 0, 0, 524312, 0, 0, 524313, 0, 0, 524314, 0, 0, 524315, 0, 0, 524316, 0, 0, 524317, 0, 0, 524318, 0, 0, 524319, 0, 0, 524320, 0, 0, 524321, 0, 0, 524322, 0, 0, 524323, 0, 0, 524324, 0, 0, 524325, 0, 3, 655334, 0, 196608, 655335, 0, 196608, 655336, 0, 196608, 655337, 0, 196608, 655338, 0, 196608, 655339, 0, 196608, 655340, 0, 196608, 655341, 0, 196608, 655342, 0, 196608, 655343, 0, 196608, 655344, 0, 196608, 655345, 0, 196608, 655346, 0, 196608, 655347, 0, 196608, 655348, 0, 196608, 655349, 0, 196608, 655350, 0, 196608, 655351, 0, 196608, 655352, 0, 196608, 655353, 0, 196608, 655354, 0, 196608, 655355, 0, 196608, 655356, 0, 196608, 655357, 0, 196608, 655358, 0, 196608, 655359, 0, 196608, 589824, 0, 196608, 589825, 0, 196608, 589826, 0, 196608, 589827, 0, 196608, 589828, 0, 196608, 589829, 0, 196608, 589830, 0, 196608, 589831, 0, 196608, 589832, 0, 196608, 589833, 0, 196608, 589834, 0, 196608, 589835, 0, 196608, 589836, 0, 196608, 589837, 0, 196608, 589838, 0, 196608, 589839, 0, 196608, 589840, 0, 196608, 589841, 0, 196608, 589842, 0, 196608, 589843, 0, 196608, 589844, 0, 196608, 589845, 0, 196608, 589846, 0, 196608, 589847, 0, 196608, 589848, 0, 196608, 589849, 0, 196608, 589850, 0, 196608, 589851, 0, 196608, 589852, 0, 196608, 589853, 0, 196608, 589854, 0, 196608, 589855, 0, 196608, 589856, 0, 196608, 589857, 0, 196608, 589858, 0, 196608, 589859, 0, 196608, 589860, 0, 196608, 589861, 0, 196608, 720870, 0, 196608, 720871, 0, 196608, 720872, 0, 196608, 720873, 0, 196608, 720874, 0, 196608, 720875, 0, 196608, 720876, 0, 196608, 720877, 0, 196608, 720878, 0, 196608, 720879, 0, 196608, 720880, 0, 196608, 720881, 0, 196608, 720882, 0, 196608, 720883, 0, 196608, 720884, 0, 196608, 720885, 0, 196608, 720886, 0, 196608, 720887, 0, 196608, 720888, 0, 196608, 720889, 0, 196608, 720890, 0, 196608, 720891, 0, 196608, 720892, 0, 196608, 720893, 0, 196608, 720894, 0, 196608, 720895, 0, 196608, 655360, 0, 196608, 655361, 0, 196608, 655362, 0, 196608, 655363, 0, 196608, 655364, 0, 196608, 655365, 0, 196608, 655366, 0, 196608, 655367, 0, 196608, 655368, 0, 196608, 655369, 0, 196608, 655370, 0, 196608, 655371, 0, 196608, 655372, 0, 196608, 655373, 0, 196608, 655374, 0, 196608, 655375, 0, 196608, 655376, 0, 196608, 655377, 0, 196608, 655378, 0, 196608, 655379, 0, 196608, 655380, 0, 196608, 655381, 0, 196608, 655382, 0, 196608, 655383, 0, 196608, 655384, 0, 196608, 655385, 0, 196608, 655386, 0, 196608, 655387, 0, 196608, 655388, 0, 196608, 655389, 0, 196608, 655390, 0, 196608, 655391, 0, 196608, 655392, 0, 196608, 655393, 0, 196608, 655394, 0, 196608, 655395, 0, 196608, 655396, 0, 196608, 655397, 0, 196608 )
 
 [node name="Horse" parent="." instance=ExtResource( 2 )]
 position = Vector2( 385.199, 162.859 )
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 3 )]
-
-[node name="Bitkiler" type="TileMap" parent="."]
-tile_set = SubResource( 7 )
-cell_size = Vector2( 32, 32 )
-format = 1
-tile_data = PoolIntArray( 131082, 0, 0, 458765, 0, 65536, 458766, 0, 65537, 458767, 0, 65537, 458768, 0, 65538 )
