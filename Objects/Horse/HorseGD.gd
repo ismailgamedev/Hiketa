@@ -14,6 +14,10 @@ func _physics_process(delta):
 	motion.y += Gravity
 	input_vector = Vector2.ZERO
 	
+	# Fare pozisyonunu degiskene atama
+	var mouse_position = get_global_mouse_position()
+	# Kolu mouse pozisyonuna gore dondurme 
+	$Skeleton2D2/OrtaGovde/UstGovde/SolKol.look_at(mouse_position)
 	
 	if Input.is_action_pressed("ui_right"):
 		motion.x = min(motion.x+ACCELERATION , MAX_SPEED)
