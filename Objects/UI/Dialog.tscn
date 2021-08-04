@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/Diyalog Panel.png" type="Texture" id=1]
+[ext_resource path="res://Fonts/Font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Objects/UI/Dialog.gd" type="Script" id=3]
+
+[node name="Dialog" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.41422
+margin_top = 1.06067
+margin_right = -1.41422
+margin_bottom = 1.06067
+mouse_filter = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Diyalog Panel" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -109.0
+margin_top = 45.6444
+margin_right = 109.0
+margin_bottom = 131.644
+mouse_filter = 2
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextCont" type="VBoxContainer" parent="Diyalog Panel"]
+margin_left = 9.68469
+margin_top = 24.0
+margin_right = 207.685
+margin_bottom = 75.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="Label" parent="Diyalog Panel/TextCont"]
+margin_top = 14.0
+margin_right = 198.0
+margin_bottom = 37.0
+custom_fonts/font = ExtResource( 2 )
+text = "Bana yaptiklarina pisman olacak
+onu oldurcegim...."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameCont" type="VBoxContainer" parent="Diyalog Panel"]
+margin_left = 10.7878
+margin_top = 6.75407
+margin_right = 210.788
+margin_bottom = 16.7541
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nameText" type="Label" parent="Diyalog Panel/NameCont"]
+modulate = Color( 1, 0.74902, 0, 1 )
+margin_right = 200.0
+margin_bottom = 10.0
+custom_fonts/font = ExtResource( 2 )
+text = "Hector"
+__meta__ = {
+"_edit_use_anchors_": false
+}
