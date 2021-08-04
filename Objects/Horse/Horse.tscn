@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Objects/Horse/AtKemikler.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Horse/HorseGD.gd" type="Script" id=2]
 [ext_resource path="res://Objects/Player/KarakterKemikleri.png" type="Texture" id=3]
+[ext_resource path="res://Sounds/backgroundmusic.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 35.1966, 37.8262 )
@@ -975,7 +976,7 @@ tracks/40/keys = {
 "values": [ Vector2( 14.8251, -1.60509 ), Vector2( 14.8251, -1.60509 ) ]
 }
 tracks/41/type = "value"
-tracks/41/path = NodePath("Skeleton2D2/OrtaGovde/UstGovde/SolKol:rotation_degrees")
+tracks/41/path = NodePath("Skeleton2D2/OrtaGovde/UstGovde/SagKol:rotation_degrees")
 tracks/41/interp = 1
 tracks/41/loop_wrap = true
 tracks/41/imported = false
@@ -984,10 +985,10 @@ tracks/41/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -199.165, -193.715 ]
+"values": [ -210.589, -206.113 ]
 }
 tracks/42/type = "value"
-tracks/42/path = NodePath("Skeleton2D2/OrtaGovde/UstGovde/SolKol:position")
+tracks/42/path = NodePath("Skeleton2D2/OrtaGovde/UstGovde/SagKol:position")
 tracks/42/interp = 1
 tracks/42/loop_wrap = true
 tracks/42/imported = false
@@ -996,34 +997,34 @@ tracks/42/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 9.45753, -12.1072 ), Vector2( 9.95943, -12.559 ) ]
+"values": [ Vector2( 8.39407, 7.48659 ), Vector2( 10.5058, 5.09642 ) ]
 }
 tracks/43/type = "value"
-tracks/43/path = NodePath("Skeleton2D2/OrtaGovde/UstGovde/SolKol/SolEl:rotation_degrees")
+tracks/43/path = NodePath("Skeleton2D2/OrtaGovde/UstGovde/SagKol/SagEl:rotation_degrees")
 tracks/43/interp = 1
 tracks/43/loop_wrap = true
 tracks/43/imported = false
 tracks/43/enabled = true
 tracks/43/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -43.0318 ]
+"values": [ -21.1628, -21.1628 ]
 }
 tracks/44/type = "value"
-tracks/44/path = NodePath("Skeleton2D2/OrtaGovde/UstGovde/SolKol/SolEl:position")
+tracks/44/path = NodePath("Skeleton2D2/OrtaGovde/UstGovde/SagKol/SagEl:position")
 tracks/44/interp = 1
 tracks/44/loop_wrap = true
 tracks/44/imported = false
 tracks/44/enabled = true
 tracks/44/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 21.4013, -8.80561 ) ]
+"values": [ Vector2( 15.6407, -12.1115 ), Vector2( 15.6407, -12.1115 ) ]
 }
 tracks/45/type = "value"
-tracks/45/path = NodePath("Skeleton2D2/OrtaGovde/UstGovde/SagKol:rotation_degrees")
+tracks/45/path = NodePath("Skeleton2D2/OrtaGovde/OnBacak:rotation_degrees")
 tracks/45/interp = 1
 tracks/45/loop_wrap = true
 tracks/45/imported = false
@@ -1032,10 +1033,10 @@ tracks/45/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -210.589, -206.113 ]
+"values": [ -178.268, -167.146 ]
 }
 tracks/46/type = "value"
-tracks/46/path = NodePath("Skeleton2D2/OrtaGovde/UstGovde/SagKol:position")
+tracks/46/path = NodePath("Skeleton2D2/OrtaGovde/OnBacak:position")
 tracks/46/interp = 1
 tracks/46/loop_wrap = true
 tracks/46/imported = false
@@ -1044,10 +1045,10 @@ tracks/46/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 8.39407, 7.48659 ), Vector2( 10.5058, 5.09642 ) ]
+"values": [ Vector2( -1.68013, -6.931 ), Vector2( -0.133339, -6.92979 ) ]
 }
 tracks/47/type = "value"
-tracks/47/path = NodePath("Skeleton2D2/OrtaGovde/UstGovde/SagKol/SagEl:rotation_degrees")
+tracks/47/path = NodePath("Skeleton2D2/OrtaGovde/OnBacak/OnAyak:rotation_degrees")
 tracks/47/interp = 1
 tracks/47/loop_wrap = true
 tracks/47/imported = false
@@ -1056,10 +1057,10 @@ tracks/47/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -21.1628, -21.1628 ]
+"values": [ 39.7986, 51.3207 ]
 }
 tracks/48/type = "value"
-tracks/48/path = NodePath("Skeleton2D2/OrtaGovde/UstGovde/SagKol/SagEl:position")
+tracks/48/path = NodePath("Skeleton2D2/OrtaGovde/OnBacak/OnAyak:position")
 tracks/48/interp = 1
 tracks/48/loop_wrap = true
 tracks/48/imported = false
@@ -1068,10 +1069,10 @@ tracks/48/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 15.6407, -12.1115 ), Vector2( 15.6407, -12.1115 ) ]
+"values": [ Vector2( 38.2936, 1.74738 ), Vector2( 37.96, 1.7572 ) ]
 }
 tracks/49/type = "value"
-tracks/49/path = NodePath("Skeleton2D2/OrtaGovde/OnBacak:rotation_degrees")
+tracks/49/path = NodePath("Skeleton2D2/OrtaGovde/ArkaBacak:rotation_degrees")
 tracks/49/interp = 1
 tracks/49/loop_wrap = true
 tracks/49/imported = false
@@ -1080,10 +1081,10 @@ tracks/49/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -178.268, -167.146 ]
+"values": [ -180.777, -162.715 ]
 }
 tracks/50/type = "value"
-tracks/50/path = NodePath("Skeleton2D2/OrtaGovde/OnBacak:position")
+tracks/50/path = NodePath("Skeleton2D2/OrtaGovde/ArkaBacak:position")
 tracks/50/interp = 1
 tracks/50/loop_wrap = true
 tracks/50/imported = false
@@ -1092,75 +1093,27 @@ tracks/50/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -1.68013, -6.931 ), Vector2( -0.133339, -6.92979 ) ]
+"values": [ Vector2( -2.44096, 6.81841 ), Vector2( -2.44096, 6.81841 ) ]
 }
 tracks/51/type = "value"
-tracks/51/path = NodePath("Skeleton2D2/OrtaGovde/OnBacak/OnAyak:rotation_degrees")
+tracks/51/path = NodePath("Skeleton2D2/OrtaGovde/ArkaBacak/ArkaAyak:position")
 tracks/51/interp = 1
 tracks/51/loop_wrap = true
 tracks/51/imported = false
 tracks/51/enabled = true
 tracks/51/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 39.7986, 51.3207 ]
-}
-tracks/52/type = "value"
-tracks/52/path = NodePath("Skeleton2D2/OrtaGovde/OnBacak/OnAyak:position")
-tracks/52/interp = 1
-tracks/52/loop_wrap = true
-tracks/52/imported = false
-tracks/52/enabled = true
-tracks/52/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 38.2936, 1.74738 ), Vector2( 37.96, 1.7572 ) ]
-}
-tracks/53/type = "value"
-tracks/53/path = NodePath("Skeleton2D2/OrtaGovde/ArkaBacak:rotation_degrees")
-tracks/53/interp = 1
-tracks/53/loop_wrap = true
-tracks/53/imported = false
-tracks/53/enabled = true
-tracks/53/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ -180.777, -162.715 ]
-}
-tracks/54/type = "value"
-tracks/54/path = NodePath("Skeleton2D2/OrtaGovde/ArkaBacak:position")
-tracks/54/interp = 1
-tracks/54/loop_wrap = true
-tracks/54/imported = false
-tracks/54/enabled = true
-tracks/54/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -2.44096, 6.81841 ), Vector2( -2.44096, 6.81841 ) ]
-}
-tracks/55/type = "value"
-tracks/55/path = NodePath("Skeleton2D2/OrtaGovde/ArkaBacak/ArkaAyak:position")
-tracks/55/interp = 1
-tracks/55/loop_wrap = true
-tracks/55/imported = false
-tracks/55/enabled = true
-tracks/55/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 24.4151, -19.2458 ) ]
 }
-tracks/56/type = "value"
-tracks/56/path = NodePath("Skeleton2D2/OrtaGovde/ArkaBacak/ArkaAyak:rotation_degrees")
-tracks/56/interp = 1
-tracks/56/loop_wrap = true
-tracks/56/imported = false
-tracks/56/enabled = true
-tracks/56/keys = {
+tracks/52/type = "value"
+tracks/52/path = NodePath("Skeleton2D2/OrtaGovde/ArkaBacak/ArkaAyak:rotation_degrees")
+tracks/52/interp = 1
+tracks/52/loop_wrap = true
+tracks/52/imported = false
+tracks/52/enabled = true
+tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -1259,11 +1212,11 @@ polygons = [ PoolIntArray( 2, 1, 0, 11, 10, 9, 8, 7, 6, 5, 4, 3 ) ]
 bones = [ NodePath("ArkaGovde"), PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ), NodePath("ArkaGovde/OnGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/OnGovde/Boyun"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/OnGovde/Boyun/Kafa"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/OnGovde/Boyun/SagOnBacak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/OnGovde/Boyun/SagOnBacak/SagOnDiz"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/OnGovde/Boyun/SagOnBacak/SagOnDiz/SagOnAyak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/OnGovde/Boyun/SagArkaBacak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/OnGovde/Boyun/SagArkaBacak/SagArkaDiz"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/OnGovde/Boyun/SagArkaBacak/SagArkaDiz/SagArkaAyak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/SolOnBacak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/SolOnBacak/SolONDiz"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/SolOnBacak/SolONDiz/SolOnAyak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/ArkaKuyruk"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/ArkaKuyruk/OnKuyruk"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/SolArkaBacak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/SolArkaBacak/SolArkaDiz"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/SolArkaBacak/SolArkaDiz/SolArkaAyak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
 
 [node name="q" type="Polygon2D" parent="polygons"]
-position = Vector2( 1.05117, -131.158 )
-scale = Vector2( 2.5, 2.5 )
+position = Vector2( 1.9491, -126.684 )
+scale = Vector2( 2.4687, 2.37077 )
 texture = ExtResource( 3 )
 skeleton = NodePath("../../Skeleton2D2")
-polygon = PoolVector2Array( 23.5625, 22.1875, 25.4375, 22.3125, 28.8125, 27.9375, 28.6875, 34.625, 25.0625, 34.5625, 23.0752, 29.1672 )
+polygon = PoolVector2Array( 21.7661, 27.0222, 23.1645, 23.8281, 26.2319, 23.1705, 28.6875, 34.625, 25.0625, 34.5625, 22.3525, 29.0421 )
 uv = PoolVector2Array( 23.5625, 22.1875, 25.4375, 22.3125, 28.8125, 27.9375, 28.6875, 34.625, 25.0625, 34.5625, 23.125, 29.125 )
 polygons = [ PoolIntArray( 0, 1, 2, 5 ), PoolIntArray( 5, 4, 3, 2 ) ]
 bones = [ NodePath("OrtaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/Kafa"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SolKol"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SolKol/SolEl"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SagKol"), PoolRealArray( 1, 1, 1, 1, 1, 1 ), NodePath("OrtaGovde/UstGovde/SagKol/SagEl"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/OnBacak"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/OnBacak/OnAyak"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/ArkaBacak"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/ArkaBacak/ArkaAyak"), PoolRealArray( 0, 0, 0, 0, 0, 0 ) ]
@@ -1299,7 +1252,7 @@ polygons = [ PoolIntArray( 1, 0, 3, 2 ) ]
 bones = [ NodePath("OrtaGovde"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/Kafa"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SolKol"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SolKol/SolEl"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SagKol"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SagKol/SagEl"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/OnBacak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/OnBacak/OnAyak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/ArkaBacak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/ArkaBacak/ArkaAyak"), PoolRealArray( 1, 1, 1, 1 ) ]
 
 [node name="govde" type="Polygon2D" parent="polygons"]
-position = Vector2( 11.1012, -131.856 )
+position = Vector2( 10.8512, -131.856 )
 scale = Vector2( 2.5, 2.49668 )
 texture = ExtResource( 3 )
 skeleton = NodePath("../../Skeleton2D2")
@@ -1309,24 +1262,25 @@ polygons = [ PoolIntArray( 0, 1, 2, 6 ), PoolIntArray( 2, 3, 4, 5, 6 ) ]
 bones = [ NodePath("OrtaGovde"), PoolRealArray( 0, 0, 1, 1, 1, 1, 1 ), NodePath("OrtaGovde/UstGovde"), PoolRealArray( 1, 1, 1, 0, 0, 0, 1 ), NodePath("OrtaGovde/UstGovde/Kafa"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SolKol"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SolKol/SolEl"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SagKol"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SagKol/SagEl"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/OnBacak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/OnBacak/OnAyak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/ArkaBacak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/ArkaBacak/ArkaAyak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ) ]
 
 [node name="Sol kol" type="Polygon2D" parent="polygons"]
-position = Vector2( 22.9162, -130.75 )
+position = Vector2( -14.2115, -144.291 )
+rotation = 0.242233
 scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 3 )
 skeleton = NodePath("../../Skeleton2D2")
-polygon = PoolVector2Array( 6.4114, 22.2689, 5.04421, 22.2142, 1.74401, 27.8217, 1.70598, 34.3282, 4.55064, 34.2691, 4.56504, 32.3454, 5.50131, 32.2931, 5.61068, 29.2852, 6.70443, 29.0821 )
-uv = PoolVector2Array( 6.0625, 22.4375, 4.75, 22.375, 1.4375, 28, 1.4375, 34.5625, 4.25, 34.4375, 4.25, 32.5, 5.25, 32.4375, 5.3125, 29.375, 6.375, 29.1875 )
-polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8 ) ]
-bones = [ NodePath("OrtaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/Kafa"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SolKol"), PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ), NodePath("OrtaGovde/UstGovde/SolKol/SolEl"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SagKol"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SagKol/SagEl"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/OnBacak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/OnBacak/OnAyak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/ArkaBacak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/ArkaBacak/ArkaAyak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+polygon = PoolVector2Array( 28.3592, 22.416, 25.1938, 22.4806, 25.323, 34.6253, 28.7468, 34.4315 )
+uv = PoolVector2Array( 28.3592, 22.416, 25.1938, 22.4806, 25.323, 34.6253, 28.7468, 34.4315 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+bones = [ NodePath("OrtaGovde"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/Kafa"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SolKol"), PoolRealArray( 1, 1, 1, 1 ), NodePath("OrtaGovde/UstGovde/SolKol/SolEl"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SagKol"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SagKol/SagEl"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/OnBacak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/OnBacak/OnAyak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/ArkaBacak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/ArkaBacak/ArkaAyak"), PoolRealArray( 0, 0, 0, 0 ) ]
 
 [node name="kafa" type="Polygon2D" parent="polygons"]
 position = Vector2( 11.1229, -126.539 )
 scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 3 )
 skeleton = NodePath("../../Skeleton2D2")
-polygon = PoolVector2Array( 19.5625, 0.375, 13.1875, 0, 12.9375, 3.3125, 8.9375, 3.4375, 8.875, 8.75, 11.25, 8.6875, 11.625, 21.0625, 21.375, 21, 20.75, 12.4375, 24.3125, 11.6875, 24.125, 5.0625, 19.625, 4.875 )
-uv = PoolVector2Array( 19.5625, 0.375, 13.1875, 0, 12.9375, 3.3125, 8.9375, 3.4375, 8.875, 8.75, 11.25, 8.6875, 11.625, 21.0625, 21.375, 21, 20.75, 12.4375, 24.3125, 11.6875, 24.125, 5.0625, 19.625, 4.875 )
+polygon = PoolVector2Array( 19.5625, 0.375, 13.1875, 0, 12.9375, 3.3125, 8.9375, 3.4375, 8.875, 8.75, 11.25, 8.6875, 11.2063, 10.012, 11.625, 21.0625, 21.375, 21, 20.75, 12.4375, 24.3125, 11.6875, 24.125, 5.0625, 19.625, 4.875 )
+uv = PoolVector2Array( 19.5625, 0.375, 13.1875, 0, 12.9375, 3.3125, 8.9375, 3.4375, 8.875, 8.75, 11.25, 8.6875, 11.2063, 10.012, 11.625, 21.0625, 21.375, 21, 20.75, 12.4375, 24.3125, 11.6875, 24.125, 5.0625, 19.625, 4.875 )
 polygons = [ PoolIntArray( 6, 7, 8, 9, 10, 11, 0, 1, 2, 3, 4, 5 ) ]
-bones = [ NodePath("OrtaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/Kafa"), PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ), NodePath("OrtaGovde/UstGovde/SolKol"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SolKol/SolEl"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SagKol"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SagKol/SagEl"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/OnBacak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/OnBacak/OnAyak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/ArkaBacak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/ArkaBacak/ArkaAyak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+bones = [ NodePath("OrtaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/Kafa"), PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ), NodePath("OrtaGovde/UstGovde/SolKol"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SolKol/SolEl"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SagKol"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SagKol/SagEl"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/OnBacak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/OnBacak/OnAyak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/ArkaBacak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("OrtaGovde/ArkaBacak/ArkaAyak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
 
 [node name="Orta_Govde" type="Polygon2D" parent="polygons"]
 position = Vector2( -36.712, -83.2815 )
@@ -1410,7 +1364,8 @@ polygons = [ PoolIntArray( 6, 5, 4, 3, 2, 1, 0 ) ]
 bones = [ NodePath("ArkaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/OnGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/OnGovde/Buyun"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/OnGovde/Buyun/Kafa"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/OnGovde/Buyun/OnSagBacak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/OnGovde/Buyun/OnSagBacak/OnSagDiz"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/OnGovde/Buyun/OnSagBacak/OnSagDiz/OnSagAyak"), PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ), NodePath("ArkaGovde/OnGovde/Buyun/ArkaSagBacak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/OnGovde/Buyun/ArkaSagBacak/ArkaSagDiz"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/OnGovde/Buyun/ArkaSagBacak/ArkaSagDiz/ArkaSagAyak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/OnSolBacak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/OnSolBacak/OnSolDiz"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/OnSolBacak/OnSolDiz/OnSolAyak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/OnSolBacak2"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/OnSolBacak2/OnSolDiz"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/OnSolBacak2/OnSolDiz/OnSolAyak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/ArkaKuyruk"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath("ArkaGovde/ArkaKuyruk/OnKuyruk"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ) ]
 
 [node name="Sol el" type="Polygon2D" parent="polygons"]
-position = Vector2( 23.6209, -136.234 )
+position = Vector2( 22.0941, -136.723 )
+rotation = -0.0180658
 scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 3 )
 skeleton = NodePath("../../Skeleton2D2")
@@ -1444,97 +1399,174 @@ position = Vector2( -27.3642, -9.01017 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="ArkaGovde" type="Bone2D" parent="Skeleton2D"]
+position = Vector2( 0, -0.442663 )
 rest = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="OnGovde" type="Bone2D" parent="Skeleton2D/ArkaGovde"]
-position = Vector2( 34.6893, 0 )
+position = Vector2( 34.9753, 0 )
 rest = Transform2D( 1, 0, 0, 1, 35.75, 0 )
 
 [node name="Buyun" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnGovde"]
-position = Vector2( 54.391, 0 )
-rotation = -0.965225
+position = Vector2( 55.266, 1.25 )
+rotation = -1.00855
 rest = Transform2D( 0.546971, -0.837152, 0.837152, 0.546971, 54.391, 0 )
 
 [node name="KafaA" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnGovde/Buyun"]
-position = Vector2( 62.7721, 6.64737 )
-rotation = 1.35812
+position = Vector2( 63.1027, 6.86503 )
+rotation = 1.43202
 rest = Transform2D( 0.138935, 0.990301, -0.990301, 0.138935, 63.2774, 7.64651 )
 default_length = 29.0
 
 [node name="OnSagBacak" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnGovde/Buyun"]
-position = Vector2( -9.77087, 18.7138 )
-rotation = 2.49931
+position = Vector2( -5.98824, 18.8224 )
+rotation = 2.23355
 rest = Transform2D( -0.821652, 0.56999, -0.56999, -0.821652, -9.77087, 18.7138 )
 
 [node name="OnSagDiz" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnGovde/Buyun/OnSagBacak"]
-position = Vector2( 44.331, 1.23058 )
-rotation = -0.179867
+position = Vector2( 44.2973, 1.11937 )
+rotation = -0.237577
 rest = Transform2D( 0.983867, -0.178899, 0.178899, 0.983867, 44.331, 1.23058 )
 
 [node name="OnSagAyak" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnGovde/Buyun/OnSagBacak/OnSagDiz"]
-position = Vector2( 28.4319, 0.684067 )
-rotation = -0.678073
+position = Vector2( 26.5174, 0.0767242 )
+rotation = -0.282626
 rest = Transform2D( 0.778783, -0.627294, 0.627294, 0.778783, 28.4319, 0.684067 )
 
 [node name="ArkaSagBacak" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnGovde/Buyun"]
-position = Vector2( -1.17766, 0.0991516 )
-rotation = 2.49931
+position = Vector2( -5.28595, 7.89257 )
+rotation = 2.52076
 rest = Transform2D( -0.821652, 0.56999, -0.56999, -0.821652, -1.17766, 0.0991516 )
 
 [node name="ArkaSagDiz" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnGovde/Buyun/ArkaSagBacak"]
-position = Vector2( 38.1652, 3.66082 )
-rotation = -0.179867
+position = Vector2( 32.6578, -2.54281 )
+rotation = 0.498426
 rest = Transform2D( 0.983867, -0.178899, 0.178899, 0.983867, 38.2425, 3.66438 )
 
 [node name="ArkaSagAyak" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnGovde/Buyun/ArkaSagBacak/ArkaSagDiz"]
-position = Vector2( 39.9341, 3.77697 )
-rotation = -0.678073
+position = Vector2( 36.6185, 5.1943 )
+rotation = -0.0813172
 rest = Transform2D( 0.778783, -0.627294, 0.627294, 0.778783, 39.9341, 3.77697 )
 
 [node name="OnSolBacak" type="Bone2D" parent="Skeleton2D/ArkaGovde"]
-position = Vector2( 0, 18.9595 )
-rotation = 1.57079
+position = Vector2( -0.985488, 17.3858 )
+rotation = 1.96898
 rest = Transform2D( 2.22127e-06, 1, -1, 2.22127e-06, 0, 18.9595 )
 
 [node name="OnSolDiz" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnSolBacak"]
-position = Vector2( 42.3076, 3.17495 )
-rotation = -0.178922
+position = Vector2( 40.5527, 4.3699 )
+rotation = -0.540115
 rest = Transform2D( 0.984036, -0.17797, 0.17797, 0.984036, 42.3076, 3.17495 )
 
 [node name="OnSolAyak" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnSolBacak/OnSolDiz"]
-position = Vector2( 27.3321, 1.9932 )
-rotation = -0.532439
+position = Vector2( 26.7822, 1.90012 )
+rotation = -0.565568
 rest = Transform2D( 0.861572, -0.507636, 0.507636, 0.861572, 27.3321, 1.9932 )
 
 [node name="ArkaSolBacak" type="Bone2D" parent="Skeleton2D/ArkaGovde"]
-position = Vector2( 7.99036, 0.870987 )
-rotation = 1.57079
+position = Vector2( 6.46539, 2.47035 )
+rotation = 1.53735
 rest = Transform2D( 2.22127e-06, 1, -1, 2.22127e-06, 7.99036, 0.870987 )
 
 [node name="ArkaSolDiz" type="Bone2D" parent="Skeleton2D/ArkaGovde/ArkaSolBacak"]
-position = Vector2( 39.6288, 3.47258 )
-rotation = -0.178922
+position = Vector2( 38.3989, 3.4139 )
+rotation = -0.759384
 rest = Transform2D( 0.984036, -0.17797, 0.17797, 0.984036, 39.6288, 3.47258 )
 
 [node name="ArkaSolAyak" type="Bone2D" parent="Skeleton2D/ArkaGovde/ArkaSolBacak/ArkaSolDiz"]
-position = Vector2( 40.0534, 3.11898 )
-rotation = -0.771516
+position = Vector2( 35.5323, 0.930323 )
+rotation = -0.0303626
 rest = Transform2D( 0.716855, -0.697223, 0.697223, 0.716855, 40.0534, 3.11898 )
 
 [node name="ArkaKuyruk" type="Bone2D" parent="Skeleton2D/ArkaGovde"]
-position = Vector2( -16.2589, -14.4771 )
-rotation = 2.2855
+position = Vector2( -13.2508, -14.8068 )
+rotation = 2.30194
 rest = Transform2D( -0.704225, 0.709977, -0.709977, -0.704225, -16.2589, -14.4771 )
 
 [node name="OnKuyruk" type="Bone2D" parent="Skeleton2D/ArkaGovde/ArkaKuyruk"]
-position = Vector2( 36.1279, -1.95957 )
-rotation = -0.198808
+position = Vector2( 37.8969, -2.70154 )
+rotation = -0.110531
 rest = Transform2D( 0.998337, -0.0576479, 0.0576479, 0.998337, 38.6907, -3.21518 )
 default_length = 38.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/idle = SubResource( 2 )
 anims/walk = SubResource( 3 )
+
+[node name="Skeleton2D2" type="Skeleton2D" parent="."]
+position = Vector2( -27.3642, -9.01017 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="OrtaGovde" type="Bone2D" parent="Skeleton2D2"]
+position = Vector2( 67.4417, -30.7921 )
+rotation = -1.57158
+scale = Vector2( 1, 1 )
+rest = Transform2D( -0.000783726, -1, 1, -0.000783726, 51.1191, -30.8929 )
+
+[node name="UstGovde" type="Bone2D" parent="Skeleton2D2/OrtaGovde"]
+position = Vector2( 23.1805, 8.36283 )
+rotation = 0.104501
+rest = Transform2D( 1, 0, 0, 1, 28.2411, 0.0423546 )
+
+[node name="Kafa" type="Bone2D" parent="Skeleton2D2/OrtaGovde/UstGovde"]
+position = Vector2( 14.8251, -1.60509 )
+rotation = 0.255509
+scale = Vector2( 1, 1 )
+rest = Transform2D( 0.999181, 0.040472, -0.040472, 0.999181, 14.9842, -1.48651 )
+default_length = 32.0
+
+[node name="SolKol" type="Bone2D" parent="Skeleton2D2/OrtaGovde/UstGovde"]
+position = Vector2( 13.2758, -13.2796 )
+rotation = 0.0952828
+scale = Vector2( 1, 1 )
+rest = Transform2D( -0.945408, -0.32589, 0.32589, -0.945408, 8.43919, -14.2273 )
+
+[node name="SolEl" type="Bone2D" parent="Skeleton2D2/OrtaGovde/UstGovde/SolKol"]
+position = Vector2( 21.7639, -1.60843 )
+rotation = -0.0986582
+scale = Vector2( 1, 1 )
+rest = Transform2D( 0.932559, -0.361019, 0.361019, 0.932559, 20.5398, -1.31879 )
+default_length = 33.0
+
+[node name="SagKol" type="Bone2D" parent="Skeleton2D2/OrtaGovde/UstGovde"]
+position = Vector2( 9.09938, 6.68829 )
+rotation = -3.64938
+scale = Vector2( 1, 1 )
+rest = Transform2D( -0.945408, -0.32589, 0.32589, -0.945408, 8.79428, 10.4951 )
+
+[node name="SagEl" type="Bone2D" parent="Skeleton2D2/OrtaGovde/UstGovde/SagKol"]
+position = Vector2( 15.6407, -12.1115 )
+rotation = -0.369361
+scale = Vector2( 1, 1 )
+rest = Transform2D( 0.932559, -0.361019, 0.361019, 0.932559, 15.6407, -12.1115 )
+default_length = 33.0
+
+[node name="OnBacak" type="Bone2D" parent="Skeleton2D2/OrtaGovde"]
+position = Vector2( -1.16351, -6.9306 )
+rotation = -3.04653
+scale = Vector2( 1, 1 )
+rest = Transform2D( -0.999543, -0.030218, 0.030218, -0.999543, -1.68013, -6.931 )
+default_length = 38.0
+
+[node name="OnAyak" type="Bone2D" parent="Skeleton2D2/OrtaGovde/OnBacak"]
+position = Vector2( 38.1822, 1.75066 )
+rotation = 0.761782
+scale = Vector2( 1, 1 )
+rest = Transform2D( 0.998941, -0.0460166, 0.0460166, 0.998941, 38.2936, 1.74738 )
+default_length = 38.0
+
+[node name="ArkaBacak" type="Bone2D" parent="Skeleton2D2/OrtaGovde"]
+position = Vector2( -2.44096, 6.81841 )
+rotation = -3.04986
+scale = Vector2( 1, 1 )
+rest = Transform2D( -0.999908, 0.0135569, -0.0135569, -0.999908, -2.44096, 6.81841 )
+default_length = 38.0
+
+[node name="ArkaAyak" type="Bone2D" parent="Skeleton2D2/OrtaGovde/ArkaBacak"]
+position = Vector2( 24.4151, -19.2458 )
+rotation = 0.63394
+scale = Vector2( 1, 1 )
+rest = Transform2D( 1, 0.000994984, -0.000994984, 1, 38.1534, 1.74536 )
+default_length = 38.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 3.13231, -9.6551 )
@@ -1543,68 +1575,7 @@ process_mode = 0
 smoothing_enabled = true
 smoothing_speed = 10.0
 
-[node name="Skeleton2D2" type="Skeleton2D" parent="."]
-position = Vector2( -27.3642, -9.01017 )
-scale = Vector2( 0.5, 0.5 )
-
-[node name="OrtaGovde" type="Bone2D" parent="Skeleton2D2"]
-position = Vector2( 67.4417, -30.0289 )
-rotation = -1.57158
-rest = Transform2D( -0.000783726, -1, 1, -0.000783726, 51.1191, -30.8929 )
-
-[node name="UstGovde" type="Bone2D" parent="Skeleton2D2/OrtaGovde"]
-position = Vector2( 24.3504, 8.55877 )
-rotation = 0.0901698
-rest = Transform2D( 1, 0, 0, 1, 28.2411, 0.0423546 )
-
-[node name="Kafa" type="Bone2D" parent="Skeleton2D2/OrtaGovde/UstGovde"]
-position = Vector2( 14.8251, -1.60509 )
-rotation = 0.288322
-rest = Transform2D( 0.999181, 0.040472, -0.040472, 0.999181, 14.9842, -1.48651 )
-default_length = 32.0
-
-[node name="SolKol" type="Bone2D" parent="Skeleton2D2/OrtaGovde/UstGovde"]
-position = Vector2( 9.6835, -12.3106 )
-rotation = -3.43326
-rest = Transform2D( -0.945408, -0.32589, 0.32589, -0.945408, 8.43919, -14.2273 )
-
-[node name="SolEl" type="Bone2D" parent="Skeleton2D2/OrtaGovde/UstGovde/SolKol"]
-position = Vector2( 21.4013, -8.80561 )
-rotation = -0.751046
-rest = Transform2D( 0.932559, -0.361019, 0.361019, 0.932559, 20.5398, -1.31879 )
-default_length = 33.0
-
-[node name="SagKol" type="Bone2D" parent="Skeleton2D2/OrtaGovde/UstGovde"]
-position = Vector2( 9.34483, 6.41048 )
-rotation = -3.64029
-rest = Transform2D( -0.945408, -0.32589, 0.32589, -0.945408, 8.79428, 10.4951 )
-
-[node name="SagEl" type="Bone2D" parent="Skeleton2D2/OrtaGovde/UstGovde/SagKol"]
-position = Vector2( 15.6407, -12.1115 )
-rotation = -0.36936
-rest = Transform2D( 0.932559, -0.361019, 0.361019, 0.932559, 15.6407, -12.1115 )
-default_length = 33.0
-
-[node name="OnBacak" type="Bone2D" parent="Skeleton2D2/OrtaGovde"]
-position = Vector2( -0.983727, -6.93046 )
-rotation = -3.02398
-rest = Transform2D( -0.999543, -0.030218, 0.030218, -0.999543, -1.68013, -6.931 )
-default_length = 38.0
-
-[node name="OnAyak" type="Bone2D" parent="Skeleton2D2/OrtaGovde/OnBacak"]
-position = Vector2( 38.1434, 1.7518 )
-rotation = 0.785156
-rest = Transform2D( 0.998941, -0.0460166, 0.0460166, 0.998941, 38.2936, 1.74738 )
-default_length = 38.0
-
-[node name="ArkaBacak" type="Bone2D" parent="Skeleton2D2/OrtaGovde"]
-position = Vector2( -2.44096, 6.81841 )
-rotation = -3.01322
-rest = Transform2D( -0.999908, 0.0135569, -0.0135569, -0.999908, -2.44096, 6.81841 )
-default_length = 38.0
-
-[node name="ArkaAyak" type="Bone2D" parent="Skeleton2D2/OrtaGovde/ArkaBacak"]
-position = Vector2( 24.4151, -19.2458 )
-rotation = 0.633941
-rest = Transform2D( 1, 0.000994984, -0.000994984, 1, 38.1534, 1.74536 )
-default_length = 38.0
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = 10.0
+autoplay = true
