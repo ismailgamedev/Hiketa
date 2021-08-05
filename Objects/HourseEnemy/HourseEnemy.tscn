@@ -1,18 +1,17 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://Objects/Horse/AtKemikler.png" type="Texture" id=1]
-[ext_resource path="res://Objects/Horse/HorseGD.gd" type="Script" id=2]
-[ext_resource path="res://Objects/Player/KarakterKemikleri.png" type="Texture" id=3]
+[ext_resource path="res://Objects/Player/KarakterKemikleri.png" type="Texture" id=1]
+[ext_resource path="res://Objects/Enemy/DusmanKemik;eri.png.png" type="Texture" id=2]
+[ext_resource path="res://Objects/Player/silah.png" type="Texture" id=3]
 [ext_resource path="res://Sounds/backgroundmusic.wav" type="AudioStream" id=4]
 [ext_resource path="res://Sounds/shootSound.wav" type="AudioStream" id=5]
-[ext_resource path="res://Objects/Player/silah.png" type="Texture" id=6]
-[ext_resource path="res://Objects/UI/HealthBar.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Objects/UI/SceneTraslitior.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/Horse/AtKemikler.png" type="Texture" id=6]
+[ext_resource path="res://Objects/HourseEnemy/HourseEnemy.gd" type="Script" id=7]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 35.1966, 18.2704 )
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 32.7951, 20.2884 )
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=20]
 resource_name = "idle"
 loop = true
 tracks/0/type = "value"
@@ -484,7 +483,7 @@ tracks/38/keys = {
 "values": [ 13.5302, 19.6137 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=21]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -1124,42 +1123,44 @@ tracks/52/keys = {
 "values": [ 36.3221 ]
 }
 
-[sub_resource type="Gradient" id=19]
+[sub_resource type="Gradient" id=22]
 colors = PoolColorArray( 1, 0.963867, 0, 1, 1, 0.354492, 0, 1 )
 
-[sub_resource type="GradientTexture" id=22]
-gradient = SubResource( 19 )
+[sub_resource type="GradientTexture" id=16]
+gradient = SubResource( 22 )
 
-[sub_resource type="Curve" id=20]
+[sub_resource type="Curve" id=23]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=23]
-curve = SubResource( 20 )
+[sub_resource type="CurveTexture" id=18]
+curve = SubResource( 23 )
 
-[sub_resource type="ParticlesMaterial" id=21]
+[sub_resource type="ParticlesMaterial" id=24]
 flag_disable_z = true
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 180.0
 initial_velocity_random = 0.68
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale_curve = SubResource( 23 )
-color_ramp = SubResource( 22 )
+scale_curve = SubResource( 18 )
+color_ramp = SubResource( 16 )
 
-[node name="Horse" type="KinematicBody2D"]
-script = ExtResource( 2 )
+[node name="HourseEnemy" type="KinematicBody2D" groups=[
+"Enemy",
+]]
+script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 21.142 )
-shape = SubResource( 1 )
+position = Vector2( -0.8909, 19.2837 )
+shape = SubResource( 19 )
 
 [node name="polygons" type="Node2D" parent="."]
-position = Vector2( -26.0279, -9.01017 )
+position = Vector2( -27.3642, -9.01017 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="Ust_Kuyruk" type="Polygon2D" parent="polygons"]
 position = Vector2( -55.2093, -148.336 )
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 49.4258, 125.559, 49.2592, 132.059, 39.7592, 153.892, 27.5925, 174.226, 12.2592, 166.892, 0.425835, 156.392, 13.4258, 141.059, 26.4258, 128.559, 36.2592, 123.559 )
 uv = PoolVector2Array( 49.4258, 125.559, 49.2592, 132.059, 39.7592, 153.892, 27.5925, 174.226, 12.2592, 166.892, 0.425835, 156.392, 13.4258, 141.059, 26.4258, 128.559, 36.2592, 123.559 )
@@ -1168,7 +1169,7 @@ bones = [ NodePath("ArkaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), Nod
 
 [node name="Alt_Kuyruk" type="Polygon2D" parent="polygons"]
 position = Vector2( -71.0067, -175.45 )
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 41.2592, 204.559, 41.5925, 196.892, 32.7592, 186.892, 27.4258, 183.892, 15.5925, 183.726, 7.5925, 199.392, 1.92583, 210.392, 1.92583, 222.392, 13.9258, 222.559, 26.4258, 215.559, 33.5925, 214.559 )
 uv = PoolVector2Array( 41.2592, 204.559, 41.5925, 196.892, 32.7592, 186.892, 27.4258, 183.892, 15.5925, 183.726, 7.5925, 199.392, 1.92583, 210.392, 1.92583, 222.392, 13.9258, 222.559, 26.4258, 215.559, 33.5925, 214.559 )
@@ -1177,7 +1178,7 @@ bones = [ NodePath("ArkaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 
 
 [node name="Sag_Arka_Diz" type="Polygon2D" parent="polygons"]
 position = Vector2( -133.019, -148.249 )
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 233.036, 187.315, 233.242, 200.896, 231.184, 209.126, 232.83, 219.62, 233.242, 228.262, 225.011, 229.908, 218.221, 229.291, 218.221, 215.916, 214.106, 212.213, 214.106, 202.953, 209.579, 200.278, 210.814, 186.904 )
 uv = PoolVector2Array( 233.036, 187.315, 233.242, 200.896, 231.184, 209.126, 232.83, 219.62, 233.242, 228.262, 225.011, 229.908, 218.221, 229.291, 218.221, 215.916, 214.106, 212.213, 214.106, 202.953, 209.579, 200.278, 210.814, 186.904 )
@@ -1186,7 +1187,7 @@ bones = [ NodePath("ArkaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 
 [node name="Sag_Arka_Ayak" type="Polygon2D" parent="polygons"]
 position = Vector2( -129.013, -159.316 )
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 219.995, 237.345, 227.649, 237.102, 232.631, 242.813, 236.762, 247.066, 236.762, 252.048, 222.668, 252.291, 219.022, 247.552 )
 uv = PoolVector2Array( 219.995, 237.345, 227.649, 237.102, 232.631, 242.813, 236.762, 247.066, 236.762, 252.048, 222.668, 252.291, 219.022, 247.552 )
@@ -1195,7 +1196,7 @@ bones = [ NodePath("ArkaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath(
 
 [node name="Sag_Arka_Bacak" type="Polygon2D" parent="polygons"]
 position = Vector2( -130.118, -131.117 )
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 208.259, 172.059, 207.592, 156.059, 203.759, 151.392, 204.092, 130.226, 223.092, 129.559, 245.092, 130.226, 245.092, 139.226, 241.926, 151.559, 241.926, 158.892, 238.092, 167.559, 233.926, 172.559 )
 uv = PoolVector2Array( 208.259, 172.059, 207.592, 156.059, 203.759, 151.392, 204.092, 130.226, 223.092, 129.559, 245.092, 130.226, 245.092, 139.226, 241.926, 151.559, 241.926, 158.892, 238.092, 167.559, 233.926, 172.559 )
@@ -1204,7 +1205,7 @@ bones = [ NodePath("ArkaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 
 
 [node name="Sol_Arka_Diz" type="Polygon2D" parent="polygons"]
 position = Vector2( -214.364, -147.72 )
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 233.036, 187.315, 233.242, 200.896, 231.184, 209.126, 232.83, 219.62, 233.242, 228.262, 225.011, 229.908, 218.221, 229.291, 218.221, 215.916, 214.106, 212.213, 214.106, 202.953, 209.579, 200.278, 210.814, 186.904 )
 uv = PoolVector2Array( 233.036, 187.315, 233.242, 200.896, 231.184, 209.126, 232.83, 219.62, 233.242, 228.262, 225.011, 229.908, 218.221, 229.291, 218.221, 215.916, 214.106, 212.213, 214.106, 202.953, 209.579, 200.278, 210.814, 186.904 )
@@ -1213,7 +1214,7 @@ bones = [ NodePath("ArkaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 
 [node name="Sol_Arka_Ayak" type="Polygon2D" parent="polygons"]
 position = Vector2( -210.061, -158.787 )
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 219.995, 237.345, 227.649, 237.102, 232.631, 242.813, 236.762, 247.066, 236.762, 252.048, 222.668, 252.291, 219.022, 247.552 )
 uv = PoolVector2Array( 219.995, 237.345, 227.649, 237.102, 232.631, 242.813, 236.762, 247.066, 236.762, 252.048, 222.668, 252.291, 219.022, 247.552 )
@@ -1222,7 +1223,7 @@ bones = [ NodePath("ArkaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath(
 
 [node name="Sol_Arka_Bacak" type="Polygon2D" parent="polygons"]
 position = Vector2( -211.073, -130.587 )
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 208.259, 172.059, 207.592, 156.059, 203.759, 151.392, 204.092, 130.226, 223.092, 129.559, 245.092, 130.226, 245.092, 139.226, 241.926, 151.559, 241.926, 158.892, 238.092, 167.559, 233.926, 172.559 )
 uv = PoolVector2Array( 208.259, 172.059, 207.592, 156.059, 203.759, 151.392, 204.092, 130.226, 223.092, 129.559, 245.092, 130.226, 245.092, 139.226, 241.926, 151.559, 241.926, 158.892, 238.092, 167.559, 233.926, 172.559 )
@@ -1231,7 +1232,7 @@ bones = [ NodePath("ArkaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 
 
 [node name="Arka_Govde" type="Polygon2D" parent="polygons"]
 position = Vector2( -25.4884, -84.1693 )
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 42.1667, 52.3333, 59.1667, 53.6667, 79.3333, 61.1667, 78.8333, 111, 58.6667, 113, 50.3333, 120, 37, 120, 13, 114.167, 7.83334, 107.167, 8.5, 69.1667, 21.3333, 56.3333, 33.3333, 52.6667 )
 uv = PoolVector2Array( 42.1667, 52.3333, 59.1667, 53.6667, 79.3333, 61.1667, 78.8333, 111, 58.6667, 113, 50.3333, 120, 37, 120, 13, 114.167, 7.83334, 107.167, 8.5, 69.1667, 21.3333, 56.3333, 33.3333, 52.6667 )
@@ -1241,7 +1242,7 @@ bones = [ NodePath("ArkaGovde"), PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 [node name="q" type="Polygon2D" parent="polygons"]
 position = Vector2( 1.9491, -126.684 )
 scale = Vector2( 2.4687, 2.37077 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 skeleton = NodePath("../../Skeleton2D2")
 polygon = PoolVector2Array( 21.7661, 27.0222, 23.1645, 23.8281, 26.2319, 23.1705, 28.6875, 34.625, 25.0625, 34.5625, 22.3525, 29.0421 )
 uv = PoolVector2Array( 23.5625, 22.1875, 25.4375, 22.3125, 28.8125, 27.9375, 28.6875, 34.625, 25.0625, 34.5625, 23.125, 29.125 )
@@ -1251,7 +1252,7 @@ bones = [ NodePath("OrtaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("Or
 [node name="sag el" type="Polygon2D" parent="polygons"]
 position = Vector2( 1.04617, -136.143 )
 scale = Vector2( 2.5, 2.5 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 skeleton = NodePath("../../Skeleton2D2")
 polygon = PoolVector2Array( 29.5, 35.125, 24.625, 34.875, 24.8125, 46.9375, 21.625, 49.25, 23.8125, 54.625, 28, 51.75, 28.75, 41, 29.875, 40.375 )
 uv = PoolVector2Array( 29.5, 35.125, 24.625, 34.875, 24.8125, 46.9375, 21.625, 49.25, 23.8125, 54.625, 28, 51.75, 28.75, 41, 29.875, 40.375 )
@@ -1261,7 +1262,7 @@ bones = [ NodePath("OrtaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePa
 [node name="sag bacak" type="Polygon2D" parent="polygons"]
 position = Vector2( 8.68116, -140.324 )
 scale = Vector2( 2.5, 2.5235 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 skeleton = NodePath("../../Skeleton2D2")
 polygon = PoolVector2Array( 21.25, 43.4966, 16.4375, 43.2466, 16.625, 51.9341, 16.4375, 59.7466, 22.125, 59.9966, 21.8125, 52.1841 )
 uv = PoolVector2Array( 21.25, 43.4966, 16.4375, 43.2466, 16.625, 51.9341, 16.4375, 59.7466, 22.125, 59.9966, 21.8125, 52.1841 )
@@ -1271,7 +1272,7 @@ bones = [ NodePath("OrtaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("Or
 [node name="sag ayak" type="Polygon2D" parent="polygons"]
 position = Vector2( 8.69067, -145.082 )
 scale = Vector2( 2.5, 2.5186 )
-texture = ExtResource( 3 )
+texture = ExtResource( 1 )
 skeleton = NodePath("../../Skeleton2D2")
 polygon = PoolVector2Array( 22.25, 77.2466, 22.0625, 60.5591, 17.0625, 60.3716, 17.1875, 77.5591 )
 uv = PoolVector2Array( 22.25, 77.2466, 22.0625, 60.5591, 17.0625, 60.3716, 17.1875, 77.5591 )
@@ -1281,7 +1282,7 @@ bones = [ NodePath("OrtaGovde"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovd
 [node name="govde" type="Polygon2D" parent="polygons"]
 position = Vector2( 10.8512, -131.856 )
 scale = Vector2( 2.5, 2.49668 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 skeleton = NodePath("../../Skeleton2D2")
 polygon = PoolVector2Array( 21, 20.4966, 9.8125, 20.4341, 9.8125, 29.4966, 9.8125, 38.4341, 12.125, 41.4341, 21.0625, 41.6841, 20.875, 29.2466 )
 uv = PoolVector2Array( 21, 20.4966, 9.8125, 20.4341, 9.8125, 29.4966, 9.8125, 38.4341, 12.125, 41.4341, 21.0625, 41.6841, 20.875, 29.2466 )
@@ -1292,7 +1293,7 @@ bones = [ NodePath("OrtaGovde"), PoolRealArray( 0, 0, 1, 1, 1, 1, 1 ), NodePath(
 position = Vector2( -14.2115, -144.291 )
 rotation = 0.242233
 scale = Vector2( 2.5, 2.5 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 skeleton = NodePath("../../Skeleton2D2")
 polygon = PoolVector2Array( 28.3592, 22.416, 25.1938, 22.4806, 25.323, 34.6253, 28.7468, 34.4315 )
 uv = PoolVector2Array( 28.3592, 22.416, 25.1938, 22.4806, 25.323, 34.6253, 28.7468, 34.4315 )
@@ -1302,7 +1303,7 @@ bones = [ NodePath("OrtaGovde"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovd
 [node name="kafa" type="Polygon2D" parent="polygons"]
 position = Vector2( 11.1229, -126.539 )
 scale = Vector2( 2.5, 2.5 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 skeleton = NodePath("../../Skeleton2D2")
 polygon = PoolVector2Array( 19.5625, 0.375, 13.1875, 0, 12.9375, 3.3125, 8.9375, 3.4375, 8.875, 8.75, 11.25, 8.6875, 11.2063, 10.012, 11.625, 21.0625, 21.375, 21, 20.75, 12.4375, 24.3125, 11.6875, 24.125, 5.0625, 19.625, 4.875 )
 uv = PoolVector2Array( 19.5625, 0.375, 13.1875, 0, 12.9375, 3.3125, 8.9375, 3.4375, 8.875, 8.75, 11.25, 8.6875, 11.2063, 10.012, 11.625, 21.0625, 21.375, 21, 20.75, 12.4375, 24.3125, 11.6875, 24.125, 5.0625, 19.625, 4.875 )
@@ -1311,7 +1312,7 @@ bones = [ NodePath("OrtaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 
 [node name="Orta_Govde" type="Polygon2D" parent="polygons"]
 position = Vector2( -36.712, -83.2815 )
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 165.741, 60.1852, 86.4815, 60, 86.6667, 115.556, 153.519, 113.889, 158.333, 102.037, 162.778, 74.2593, 166.667, 65.7407 )
 uv = PoolVector2Array( 165.741, 60.1852, 86.4815, 60, 86.6667, 115.556, 153.519, 113.889, 158.333, 102.037, 162.778, 74.2593, 166.667, 65.7407 )
@@ -1320,7 +1321,7 @@ bones = [ NodePath("ArkaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath(
 
 [node name="Boyun_" type="Polygon2D" parent="polygons"]
 position = Vector2( -45.4261, -67.8631 )
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 179.101, 4.86027, 165.735, 4.25273, 143.013, 18.8335, 115.674, 41.9198, 115.917, 47.0231, 178.615, 46.7801, 178.858, 42.1628, 178.736, 21.0207 )
 uv = PoolVector2Array( 179.101, 4.86027, 165.735, 4.25273, 143.013, 18.8335, 115.674, 41.9198, 115.917, 47.0231, 178.615, 46.7801, 178.858, 42.1628, 178.736, 21.0207 )
@@ -1329,7 +1330,7 @@ bones = [ NodePath("ArkaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePa
 
 [node name="Kafa_" type="Polygon2D" parent="polygons"]
 position = Vector2( -67.5139, -76.8672 )
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 241.565, 50.6073, 240.351, 38.4615, 228.745, 26.3158, 220.243, 17.9487, 216.734, 5.93792, 211.741, 5.80297, 199.325, 14.0351, 198.92, 44.2645, 215.789, 48.0432, 227.53, 52.0918, 238.462, 52.3617 )
 uv = PoolVector2Array( 241.565, 50.6073, 240.351, 38.4615, 228.745, 26.3158, 220.243, 17.9487, 216.734, 5.93792, 211.741, 5.80297, 199.325, 14.0351, 198.92, 44.2645, 215.789, 48.0432, 227.53, 52.0918, 238.462, 52.3617 )
@@ -1338,7 +1339,7 @@ bones = [ NodePath("ArkaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 
 
 [node name="Sag_On_Bacak" type="Polygon2D" parent="polygons"]
 position = Vector2( -61.4315, -119.888 )
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 182.386, 137.419, 149.708, 137.518, 149.627, 141.804, 149.413, 153.069, 149.512, 170.293, 153.941, 182.695, 174.315, 182.498, 174.708, 168.423, 178.35, 166.455, 178.547, 158.778, 182.386, 158.581 )
 uv = PoolVector2Array( 182.386, 137.419, 149.708, 137.518, 149.627, 141.804, 149.413, 153.069, 149.512, 170.293, 153.941, 182.695, 174.315, 182.498, 174.708, 168.423, 178.35, 166.455, 178.547, 158.778, 182.386, 158.581 )
@@ -1347,7 +1348,7 @@ bones = [ NodePath("ArkaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 
 
 [node name="Sol_On_Bacak" type="Polygon2D" parent="polygons"]
 position = Vector2( -65.6205, -122.179 )
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 87.832, 140.139, 67.0913, 139.769, 50.0543, 139.769, 50.0543, 164.399, 53.0172, 175.325, 57.0913, 185.51, 79.3135, 184.954, 82.2765, 175.695, 88.3876, 172.732 )
 uv = PoolVector2Array( 87.832, 140.139, 67.0913, 139.769, 50.0543, 139.769, 50.0543, 164.399, 53.0172, 175.325, 57.0913, 185.51, 79.3135, 184.954, 82.2765, 175.695, 88.3876, 172.732 )
@@ -1356,7 +1357,7 @@ bones = [ NodePath("ArkaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), Nod
 
 [node name="Sol_On_Diz" type="Polygon2D" parent="polygons"]
 position = Vector2( -67.9381, -137.709 )
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 73.4456, 198.551, 59.9883, 198.551, 60.2071, 211.133, 63.38, 213.102, 64.3647, 228.091, 77.822, 227.544, 77.6032, 218.463, 73.555, 218.135 )
 uv = PoolVector2Array( 73.4456, 198.551, 59.9883, 198.551, 60.2071, 211.133, 63.38, 213.102, 64.3647, 228.091, 77.822, 227.544, 77.6032, 218.463, 73.555, 218.135 )
@@ -1365,7 +1366,7 @@ bones = [ NodePath("ArkaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePa
 
 [node name="Sol_On_Ayak" type="Polygon2D" parent="polygons"]
 position = Vector2( -63.9422, -150.733 )
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 77.1739, 243.769, 73.188, 239.34, 64.5964, 239.163, 64.5078, 248.552, 68.7593, 252.626, 81.514, 252.537, 81.3369, 247.843 )
 uv = PoolVector2Array( 77.1739, 243.769, 73.188, 239.34, 64.5964, 239.163, 64.5078, 248.552, 68.7593, 252.626, 81.514, 252.537, 81.3369, 247.843 )
@@ -1374,7 +1375,7 @@ bones = [ NodePath("ArkaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath(
 
 [node name="Sag_On_Diz" type="Polygon2D" parent="polygons"]
 position = Vector2( -63.4389, -134.912 )
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 172.34, 209.656, 172.61, 196.431, 159.384, 196.431, 159.384, 209.521, 163.568, 225.581, 176.388, 225.311, 176.523, 216.809 )
 uv = PoolVector2Array( 172.34, 209.656, 172.61, 196.431, 159.384, 196.431, 159.384, 209.521, 163.568, 225.581, 176.388, 225.311, 176.523, 216.809 )
@@ -1383,7 +1384,7 @@ bones = [ NodePath("ArkaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath(
 
 [node name="Sag_On_Ayak" type="Polygon2D" parent="polygons"]
 position = Vector2( -60.4361, -145.914 )
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
 skeleton = NodePath("../../Skeleton2D")
 polygon = PoolVector2Array( 173.343, 235.635, 164.042, 235.458, 164.308, 244.493, 168.471, 249.01, 181.757, 248.567, 181.491, 244.05, 177.063, 239.621 )
 uv = PoolVector2Array( 173.343, 235.635, 164.042, 235.458, 164.308, 244.493, 168.471, 249.01, 181.757, 248.567, 181.491, 244.05, 177.063, 239.621 )
@@ -1394,7 +1395,7 @@ bones = [ NodePath("ArkaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ), NodePath(
 position = Vector2( 22.0941, -136.723 )
 rotation = -0.0180658
 scale = Vector2( 2.5, 2.5 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 skeleton = NodePath("../../Skeleton2D2")
 polygon = PoolVector2Array( 4.15409, 35.6961, 0.754425, 35.7274, 0.273441, 39.8627, 1.49843, 44.9158, 2.625, 51.0625, 5.0625, 53.6875, 6.375, 53.6875, 7.5, 48.8125, 6.0625, 47.1875, 4.5625, 47.375 )
 uv = PoolVector2Array( 4.125, 35.6875, 0.75, 35.75, 0.5, 40.0625, 1.4375, 44.9375, 2.625, 51.0625, 5.0625, 53.6875, 6.375, 53.6875, 7.5, 48.8125, 6.0625, 47.1875, 4.5625, 47.375 )
@@ -1404,7 +1405,7 @@ bones = [ NodePath("OrtaGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), 
 [node name="sol bacak" type="Polygon2D" parent="polygons"]
 position = Vector2( 13.4474, -138.698 )
 scale = Vector2( 2.51942, 2.50062 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 skeleton = NodePath("../../Skeleton2D2")
 polygon = PoolVector2Array( 8.625, 60, 14.625, 59.875, 15.8065, 41.5555, 8.27527, 40.5557 )
 uv = PoolVector2Array( 8.625, 60, 14.625, 59.875, 15.75, 41.875, 8.3125, 40.9375 )
@@ -1414,7 +1415,7 @@ bones = [ NodePath("OrtaGovde"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovd
 [node name="sol ayak" type="Polygon2D" parent="polygons"]
 position = Vector2( 13.6032, -143.738 )
 scale = Vector2( 2.5, 2.5 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 skeleton = NodePath("../../Skeleton2D2")
 polygon = PoolVector2Array( 12.7741, 60.4333, 8.10295, 60.2427, 8.38894, 78.6411, 15.1573, 78.2598 )
 uv = PoolVector2Array( 12.7741, 60.4333, 8.10295, 60.2427, 8.38894, 78.6411, 15.1573, 78.2598 )
@@ -1422,7 +1423,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 bones = [ NodePath("OrtaGovde"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/Kafa"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SolKol"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SolKol/SolEl"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SagKol"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/UstGovde/SagKol/SagEl"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/OnBacak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/OnBacak/OnAyak"), PoolRealArray( 1, 1, 1, 1 ), NodePath("OrtaGovde/ArkaBacak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("OrtaGovde/ArkaBacak/ArkaAyak"), PoolRealArray( 0, 0, 0, 0 ) ]
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
-position = Vector2( -26.0279, -9.01017 )
+position = Vector2( -27.3642, -9.01017 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="ArkaGovde" type="Bone2D" parent="Skeleton2D"]
@@ -1435,42 +1436,50 @@ rest = Transform2D( 1, 0, 0, 1, 35.75, 0 )
 [node name="Buyun" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnGovde"]
 position = Vector2( 54.391, 0 )
 rotation = -0.992056
+scale = Vector2( 1, 1 )
 rest = Transform2D( 0.546971, -0.837152, 0.837152, 0.546971, 54.391, 0 )
 
 [node name="KafaA" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnGovde/Buyun"]
 position = Vector2( 63.2774, 7.64651 )
 rotation = 1.43141
+scale = Vector2( 1, 1 )
 rest = Transform2D( 0.138935, 0.990301, -0.990301, 0.138935, 63.2774, 7.64651 )
 default_length = 29.0
 
 [node name="OnSagBacak" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnGovde/Buyun"]
 position = Vector2( -9.77087, 18.7138 )
 rotation = 2.53509
+scale = Vector2( 1, 1 )
 rest = Transform2D( -0.821652, 0.56999, -0.56999, -0.821652, -9.77087, 18.7138 )
 
 [node name="OnSagDiz" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnGovde/Buyun/OnSagBacak"]
 position = Vector2( 44.331, 1.23058 )
 rotation = -0.179867
+scale = Vector2( 1, 1 )
 rest = Transform2D( 0.983867, -0.178899, 0.178899, 0.983867, 44.331, 1.23058 )
 
 [node name="OnSagAyak" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnGovde/Buyun/OnSagBacak/OnSagDiz"]
 position = Vector2( 28.4319, 0.684067 )
 rotation = -0.678073
+scale = Vector2( 1, 1 )
 rest = Transform2D( 0.778783, -0.627294, 0.627294, 0.778783, 28.4319, 0.684067 )
 
 [node name="ArkaSagBacak" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnGovde/Buyun"]
 position = Vector2( -1.17766, 0.0991516 )
 rotation = 2.53509
+scale = Vector2( 1, 1 )
 rest = Transform2D( -0.821652, 0.56999, -0.56999, -0.821652, -1.17766, 0.0991516 )
 
 [node name="ArkaSagDiz" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnGovde/Buyun/ArkaSagBacak"]
 position = Vector2( 38.2425, 3.66438 )
 rotation = -0.179867
+scale = Vector2( 1, 1 )
 rest = Transform2D( 0.983867, -0.178899, 0.178899, 0.983867, 38.2425, 3.66438 )
 
 [node name="ArkaSagAyak" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnGovde/Buyun/ArkaSagBacak/ArkaSagDiz"]
 position = Vector2( 39.9341, 3.77697 )
 rotation = -0.678073
+scale = Vector2( 1, 1 )
 rest = Transform2D( 0.778783, -0.627294, 0.627294, 0.778783, 39.9341, 3.77697 )
 
 [node name="OnSolBacak" type="Bone2D" parent="Skeleton2D/ArkaGovde"]
@@ -1481,11 +1490,13 @@ rest = Transform2D( 2.22127e-06, 1, -1, 2.22127e-06, 0, 18.9595 )
 [node name="OnSolDiz" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnSolBacak"]
 position = Vector2( 42.3076, 3.17495 )
 rotation = -0.178922
+scale = Vector2( 1, 1 )
 rest = Transform2D( 0.984036, -0.17797, 0.17797, 0.984036, 42.3076, 3.17495 )
 
 [node name="OnSolAyak" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnSolBacak/OnSolDiz"]
 position = Vector2( 27.3321, 1.9932 )
 rotation = -0.532439
+scale = Vector2( 1, 1 )
 rest = Transform2D( 0.861572, -0.507636, 0.507636, 0.861572, 27.3321, 1.9932 )
 
 [node name="ArkaSolBacak" type="Bone2D" parent="Skeleton2D/ArkaGovde"]
@@ -1496,11 +1507,13 @@ rest = Transform2D( 2.22127e-06, 1, -1, 2.22127e-06, 7.99036, 0.870987 )
 [node name="ArkaSolDiz" type="Bone2D" parent="Skeleton2D/ArkaGovde/ArkaSolBacak"]
 position = Vector2( 39.6288, 3.47258 )
 rotation = -0.178922
+scale = Vector2( 1, 1 )
 rest = Transform2D( 0.984036, -0.17797, 0.17797, 0.984036, 39.6288, 3.47258 )
 
 [node name="ArkaSolAyak" type="Bone2D" parent="Skeleton2D/ArkaGovde/ArkaSolBacak/ArkaSolDiz"]
 position = Vector2( 40.0534, 3.11898 )
 rotation = -0.771516
+scale = Vector2( 1, 1 )
 rest = Transform2D( 0.716855, -0.697223, 0.697223, 0.716855, 40.0534, 3.11898 )
 
 [node name="ArkaKuyruk" type="Bone2D" parent="Skeleton2D/ArkaGovde"]
@@ -1511,15 +1524,16 @@ rest = Transform2D( -0.704225, 0.709977, -0.709977, -0.704225, -16.2589, -14.477
 [node name="OnKuyruk" type="Bone2D" parent="Skeleton2D/ArkaGovde/ArkaKuyruk"]
 position = Vector2( 36.5832, -2.52221 )
 rotation = -0.0576798
+scale = Vector2( 1, 1 )
 rest = Transform2D( 0.998337, -0.0576479, 0.0576479, 0.998337, 38.6907, -3.21518 )
 default_length = 38.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/idle = SubResource( 2 )
-anims/walk = SubResource( 3 )
+anims/idle = SubResource( 20 )
+anims/walk = SubResource( 21 )
 
 [node name="Skeleton2D2" type="Skeleton2D" parent="."]
-position = Vector2( -26.0279, -9.01017 )
+position = Vector2( -27.3642, -9.01017 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="OrtaGovde" type="Bone2D" parent="Skeleton2D2"]
@@ -1554,7 +1568,7 @@ position = Vector2( 38.6201, -3.68326 )
 rotation = 0.0418757
 scale = Vector2( 0.301511, 0.28101 )
 z_index = -1
-texture = ExtResource( 6 )
+texture = ExtResource( 3 )
 
 [node name="Position2D" type="Position2D" parent="Skeleton2D2/OrtaGovde/UstGovde/SolKol/SolEl/silah"]
 position = Vector2( 38.532, -9.05319 )
@@ -1568,15 +1582,15 @@ amount = 14
 lifetime = 0.3
 one_shot = true
 explosiveness = 1.0
-process_material = SubResource( 21 )
+process_material = SubResource( 24 )
 
 [node name="SagKol" type="Bone2D" parent="Skeleton2D2/OrtaGovde/UstGovde"]
-position = Vector2( 9.09938, 6.68829 )
+position = Vector2( 10.7337, 8.0144 )
 rotation = -3.64938
 rest = Transform2D( -0.945408, -0.32589, 0.32589, -0.945408, 8.79428, 10.4951 )
 
 [node name="SagEl" type="Bone2D" parent="Skeleton2D2/OrtaGovde/UstGovde/SagKol"]
-position = Vector2( 15.6407, -12.1115 )
+position = Vector2( 12.7499, -10.6501 )
 rotation = -0.369361
 rest = Transform2D( 0.932559, -0.361019, 0.361019, 0.932559, 15.6407, -12.1115 )
 default_length = 33.0
@@ -1605,58 +1619,26 @@ rotation = 0.63394
 rest = Transform2D( 1, 0.000994984, -0.000994984, 1, 38.1534, 1.74536 )
 default_length = 38.0
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 3.13231, -9.6551 )
-current = true
-process_mode = 0
-smoothing_enabled = true
-smoothing_speed = 10.0
-
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
-volume_db = 0.5
+volume_db = 1.0
 autoplay = true
 
 [node name="shoot" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( -0.122665, 5.8098 )
 stream = ExtResource( 5 )
 
-[node name="Interface" type="CanvasLayer" parent="."]
-
-[node name="UI" type="Control" parent="Interface"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HealthBar" parent="Interface/UI" instance=ExtResource( 7 )]
-
-[node name="SceneTraslition" parent="Interface/UI" instance=ExtResource( 8 )]
-
-[node name="DeathPanel" type="Control" parent="Interface/UI"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -0.297302
-margin_right = -0.297302
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TryAgainButton" type="Button" parent="Interface/UI/DeathPanel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-text = "Try Again"
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
 
 [node name="HurtBox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="HurtBox"]
-polygon = PoolVector2Array( 11.3539, -69.7734, 28.1908, -64.0207, 14.8616, -40.3087, 11.9151, -21.6478, -8.8862, 12.4268, -17.2295, 6.33492, -8.5, -10.25, -0.940224, -32.203 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HurtBox"]
+polygon = PoolVector2Array( 11.0364, -15.785, -12.684, 13.6889, -17.1739, 6.39293, -1.74001, -20.8268, 9.48461, -61.2354, 22.3009, -57.4798 )
 
-[connection signal="pressed" from="Interface/UI/DeathPanel/TryAgainButton" to="." method="_on_TryAgainButton_pressed"]
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

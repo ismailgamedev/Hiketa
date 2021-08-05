@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Objects/Player/silah.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Player/PlayerGF.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Objects/UI/HealthBar.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/UI/SceneTraslitior.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Sounds/shootSound.wav" type="AudioStream" id=6]
+[ext_resource path="res://Objects/Bullet/boolEffect.tscn" type="PackedScene" id=7]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 7.15412
@@ -1126,6 +1127,9 @@ __meta__ = {
 [node name="shoot" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( -0.122665, 5.8098 )
 stream = ExtResource( 6 )
+
+[node name="boolEffect" parent="." instance=ExtResource( 7 )]
+position = Vector2( -0.875381, 1.66584 )
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
 [connection signal="pressed" from="Interface/UI/DeathPanel/TryAgainButton" to="." method="_on_TryAgainButton_pressed"]

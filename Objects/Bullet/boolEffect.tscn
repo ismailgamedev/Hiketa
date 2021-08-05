@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Objects/Bullet/boolEffect.gd" type="Script" id=1]
+
+[sub_resource type="Curve" id=1]
+min_value = -200.0
+max_value = 200.0
+_data = [ Vector2( 0, 200 ), 0.0, 0.0, 0, 0, Vector2( 1, -200 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+emission_shape = 1
+emission_sphere_radius = 1.0
+flag_disable_z = true
+spread = 0.0
+gravity = Vector3( 0, -10, 0 )
+initial_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 100.0
+radial_accel = 107.15
+radial_accel_random = 1.0
+radial_accel_curve = SubResource( 2 )
+scale = 3.58
+scale_random = 1.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="boolEffect" type="Particles2D"]
+position = Vector2( 0.0312424, -0.0399342 )
+emitting = false
+amount = 20
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+fract_delta = false
+local_coords = false
+process_material = SubResource( 3 )
+script = ExtResource( 1 )

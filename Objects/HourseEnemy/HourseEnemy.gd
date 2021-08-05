@@ -1,12 +1,12 @@
 extends KinematicBody2D
 
 # Hız ve yer çekimi degeri
-const WALK_SPEED = 200
+const WALK_SPEED = 300
 const GRAVITY = 25
 const BULLET = preload("res://Objects/Bullet/EnemyBullet.tscn")
 export(NodePath) var player 
 # Kol kemigini degiskene atama
-onready var hand = get_node("Skeleton2D/YariGovde/UstGovde/Sag Kol")
+onready var hand = get_node("Skeleton2D2/OrtaGovde/UstGovde/SolKol")
 
 # AnimationPlayeri degiskene atama
 onready var animation_player = get_node("AnimationPlayer")
@@ -28,6 +28,7 @@ func _physics_process(delta):
 	animation_prcess()
 	flip_enemy()
 	die_check()
+	
 
 
 # Yurume kodu
@@ -47,7 +48,7 @@ func movement():
 	move_and_slide(direction  * WALK_SPEED) 
 
 	# Mesafeyi kontrol etme
-	if distance < 300 and distance > 150:
+	if distance < 500 and distance > 200:
 		# Karakter pozisyonuna gore direction degiskeninin x degerini veriyoruz
 		if player:
 			direction.x = (player.position.x - position.x)
@@ -78,12 +79,22 @@ func flip_enemy():
 	flip.x = (player.position.x - position.x)
 	# Eger 0.1 den buyuk ise sag don
 	if flip.x > 0.1:
-		$Skeleton2D.scale = Vector2(1,1)
-		$polyons.scale = Vector2(1,1)
+		$Skeleton2D.scale = Vector2(0.5,0.5)
+		$Skeleton2D.position = Vector2(-26.535,-9.01)
+		$Skeleton2D2.scale = Vector2(0.5,0.5)
+		$Skeleton2D2.position = Vector2(-26.535,-9.01)
+		$polygons.scale = Vector2(0.5,0.5)
+		$polygons.position = Vector2(-26.535,-9.01)
+		$HurtBox.scale.x = 1
 	# Eger 0.1 den kucuk ise sa don
 	if flip.x < -0.1:
-		$Skeleton2D.scale = Vector2(-1,1)
-		$polyons.scale = Vector2(-1,1)
+		$Skeleton2D.scale = Vector2(-0.5,0.5)
+		$Skeleton2D.position = Vector2(26.535,-9.01)
+		$Skeleton2D2.scale = Vector2(-0.5,0.5)
+		$Skeleton2D2.position = Vector2(26.535,-9.01)
+		$polygons.scale = Vector2(-0.5,0.5)
+		$polygons.position = Vector2(26.535,-9.01)
+		$HurtBox.scale.x = -1
 
 # Elin Karakter pozisyonuna bakmasi
 func hand_look():
@@ -95,8 +106,9 @@ func shoot():
 	if distance < 250 and health > 0 and player.health > 0:
 		var bullet_instance = BULLET.instance()
 		$shoot.play()
+		$Skeleton2D2/OrtaGovde/UstGovde/SolKol/SolEl/silah/shootParticle.restart()
 		bullet_instance.rotation = rotation
-		bullet_instance.global_position = $"Skeleton2D/YariGovde/UstGovde/Sag Kol/Sag El/silah/Position2D".global_position
+		bullet_instance.global_position = $"Skeleton2D2/OrtaGovde/UstGovde/SolKol/SolEl/silah".global_position
 		get_parent().add_child(bullet_instance)
 
 func _on_Timer_timeout():
@@ -112,11 +124,13 @@ func die_check():
 	
 func _on_HurtBox_area_entered(area):
 	if area.is_in_group("Bullet"):
-		health -= 15
+		health -= 7
 		var blood_instance = blood.instance()
 		blood_instance.global_position = area.global_position
 		get_parent().add_child(blood_instance)
 
+
 func _on_VisibilityNotifier2D_screen_exited():
 	if health <= 0:
 		self.queue_free()
+

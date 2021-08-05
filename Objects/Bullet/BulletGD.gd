@@ -7,7 +7,7 @@ onready var mouse_pos = null
 func _ready():
 	# Mermiyi canlandirinca fare pozisyonunu degiskene almak icin
 	mouse_pos = get_local_mouse_position()
-	
+		
 func _physics_process(delta):
 	# Mermiyi fare pozisyonuna gonderme
 	movement = movement.move_toward(mouse_pos,delta)

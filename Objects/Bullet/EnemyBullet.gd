@@ -11,6 +11,10 @@ func _ready():
 		
 	if get_tree().get_current_scene().get_name() == "Level2":
 		player_Position = get_node("/root/Level2/Player").get_global_position()
+		
+	if get_tree().get_current_scene().get_name() == "Level3":
+		player_Position = get_node("/root/Level3/Horse/Position2D").get_global_position()
+		
 	direction = (player_Position - origin).normalized()
 func _physics_process(delta):
 	# Mermiyi fare pozisyonuna gonderme

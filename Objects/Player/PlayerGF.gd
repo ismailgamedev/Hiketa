@@ -12,6 +12,7 @@ var motion = Vector2()
 var input_vector = Vector2()
 var mouse_position
 var health = 100
+onready var blood = preload("res://Objects/Bullet/boolEffect.tscn")
 
 func _ready():
 	pass
@@ -115,6 +116,9 @@ func _on_HurtBox_area_entered(area):
 	if area.is_in_group("EnemyBullet"):
 		health -= 5
 		$Interface/UI/HealthBar.value = health
+		var blood_instance = blood.instance()
+		blood_instance.global_position = area.global_position
+		get_parent().add_child(blood_instance)
 
 
 func _on_TryAgainButton_pressed():
