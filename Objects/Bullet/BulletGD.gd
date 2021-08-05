@@ -23,8 +23,10 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 
 func _on_Bullet_area_entered(area):
-	self.queue_free()
+	if area.name != "Horse":
+		self.queue_free()
 
 
 func _on_Bullet_body_entered(body):
-	self.queue_free()
+	if body.name != "Horse":
+		self.queue_free()

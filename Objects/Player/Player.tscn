@@ -1002,7 +1002,6 @@ rotation = -2.31431
 [node name="Sol Kol" type="Bone2D" parent="Skeleton2D/YariGovde/UstGovde"]
 position = Vector2( 6.1424, -5.27817 )
 rotation = -2.618
-scale = Vector2( 1, 1 )
 rest = Transform2D( -0.866028, -0.499995, 0.499995, -0.866028, 6.1424, -5.27817 )
 default_length = 6.0
 
@@ -1025,7 +1024,6 @@ default_length = 15.0
 [node name="Sol Ayak" type="Bone2D" parent="Skeleton2D/YariGovde/Sol Bacak"]
 position = Vector2( 15.4414, 0.144152 )
 rotation = -0.0938508
-scale = Vector2( 1, 1 )
 rest = Transform2D( 0.995599, -0.0937131, 0.0937131, 0.995599, 15.4414, 0.144152 )
 default_length = 14.0
 
@@ -1038,7 +1036,6 @@ default_length = 15.0
 [node name="Sag Ayak" type="Bone2D" parent="Skeleton2D/YariGovde/Sag Bacak"]
 position = Vector2( 15.2739, -0.960582 )
 rotation = -0.0938508
-scale = Vector2( 1, 1 )
 rest = Transform2D( 0.995599, -0.0937131, 0.0937131, 0.995599, 15.2739, -0.960582 )
 default_length = 14.0
 

@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Objects/Horse/AtKemikler.png" type="Texture" id=1]
 [ext_resource path="res://Objects/Horse/HorseGD.gd" type="Script" id=2]
 [ext_resource path="res://Objects/Player/KarakterKemikleri.png" type="Texture" id=3]
 [ext_resource path="res://Sounds/backgroundmusic.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/shootSound.wav" type="AudioStream" id=5]
+[ext_resource path="res://Objects/Player/silah.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 35.1966, 37.8262 )
@@ -1499,7 +1501,6 @@ scale = Vector2( 0.5, 0.5 )
 [node name="OrtaGovde" type="Bone2D" parent="Skeleton2D2"]
 position = Vector2( 67.4417, -30.7921 )
 rotation = -1.57158
-scale = Vector2( 1, 1 )
 rest = Transform2D( -0.000783726, -1, 1, -0.000783726, 51.1191, -30.8929 )
 
 [node name="UstGovde" type="Bone2D" parent="Skeleton2D2/OrtaGovde"]
@@ -1510,61 +1511,63 @@ rest = Transform2D( 1, 0, 0, 1, 28.2411, 0.0423546 )
 [node name="Kafa" type="Bone2D" parent="Skeleton2D2/OrtaGovde/UstGovde"]
 position = Vector2( 14.8251, -1.60509 )
 rotation = 0.255509
-scale = Vector2( 1, 1 )
 rest = Transform2D( 0.999181, 0.040472, -0.040472, 0.999181, 14.9842, -1.48651 )
 default_length = 32.0
 
 [node name="SolKol" type="Bone2D" parent="Skeleton2D2/OrtaGovde/UstGovde"]
 position = Vector2( 13.2758, -13.2796 )
 rotation = 0.0952828
-scale = Vector2( 1, 1 )
 rest = Transform2D( -0.945408, -0.32589, 0.32589, -0.945408, 8.43919, -14.2273 )
 
 [node name="SolEl" type="Bone2D" parent="Skeleton2D2/OrtaGovde/UstGovde/SolKol"]
 position = Vector2( 21.7639, -1.60843 )
 rotation = -0.0986582
-scale = Vector2( 1, 1 )
 rest = Transform2D( 0.932559, -0.361019, 0.361019, 0.932559, 20.5398, -1.31879 )
 default_length = 33.0
+
+[node name="silah" type="Sprite" parent="Skeleton2D2/OrtaGovde/UstGovde/SolKol/SolEl"]
+position = Vector2( 38.6201, -3.68326 )
+rotation = 0.0418757
+scale = Vector2( 0.301511, 0.28101 )
+z_index = -1
+texture = ExtResource( 6 )
+
+[node name="Position2D" type="Position2D" parent="Skeleton2D2/OrtaGovde/UstGovde/SolKol/SolEl/silah"]
+position = Vector2( 38.532, -9.05319 )
+rotation = -2.31431
 
 [node name="SagKol" type="Bone2D" parent="Skeleton2D2/OrtaGovde/UstGovde"]
 position = Vector2( 9.09938, 6.68829 )
 rotation = -3.64938
-scale = Vector2( 1, 1 )
 rest = Transform2D( -0.945408, -0.32589, 0.32589, -0.945408, 8.79428, 10.4951 )
 
 [node name="SagEl" type="Bone2D" parent="Skeleton2D2/OrtaGovde/UstGovde/SagKol"]
 position = Vector2( 15.6407, -12.1115 )
 rotation = -0.369361
-scale = Vector2( 1, 1 )
 rest = Transform2D( 0.932559, -0.361019, 0.361019, 0.932559, 15.6407, -12.1115 )
 default_length = 33.0
 
 [node name="OnBacak" type="Bone2D" parent="Skeleton2D2/OrtaGovde"]
 position = Vector2( -1.16351, -6.9306 )
 rotation = -3.04653
-scale = Vector2( 1, 1 )
 rest = Transform2D( -0.999543, -0.030218, 0.030218, -0.999543, -1.68013, -6.931 )
 default_length = 38.0
 
 [node name="OnAyak" type="Bone2D" parent="Skeleton2D2/OrtaGovde/OnBacak"]
 position = Vector2( 38.1822, 1.75066 )
 rotation = 0.761782
-scale = Vector2( 1, 1 )
 rest = Transform2D( 0.998941, -0.0460166, 0.0460166, 0.998941, 38.2936, 1.74738 )
 default_length = 38.0
 
 [node name="ArkaBacak" type="Bone2D" parent="Skeleton2D2/OrtaGovde"]
 position = Vector2( -2.44096, 6.81841 )
 rotation = -3.04986
-scale = Vector2( 1, 1 )
 rest = Transform2D( -0.999908, 0.0135569, -0.0135569, -0.999908, -2.44096, 6.81841 )
 default_length = 38.0
 
 [node name="ArkaAyak" type="Bone2D" parent="Skeleton2D2/OrtaGovde/ArkaBacak"]
 position = Vector2( 24.4151, -19.2458 )
 rotation = 0.63394
-scale = Vector2( 1, 1 )
 rest = Transform2D( 1, 0.000994984, -0.000994984, 1, 38.1534, 1.74536 )
 default_length = 38.0
 
@@ -1579,3 +1582,7 @@ smoothing_speed = 10.0
 stream = ExtResource( 4 )
 volume_db = 10.0
 autoplay = true
+
+[node name="shoot" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( -0.122665, 5.8098 )
+stream = ExtResource( 5 )

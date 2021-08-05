@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+const BULLET = preload("res://Objects/Bullet/Bullet.tscn")
 const Gravity = 25
 const ACCELERATION = 1000
 const MAX_SPEED = 250
@@ -7,6 +8,7 @@ const JUMP_HEIGHT = -500
 const UP = Vector2 ( 0 , -1 )
 var motion = Vector2()
 var input_vector = Vector2()
+var health = 100
 
 func _physics_process(delta):
 	
@@ -48,6 +50,21 @@ func _physics_process(delta):
 			motion.x = lerp(motion.x , 0 , 0.009)
 	motion = move_and_slide(motion , UP)
 	_process_animation()
+	shoot_input()
+	
+func shoot_input():
+	
+	if Input.is_action_just_pressed("fire"):
+		shoot()	
+
+func shoot():
+	if health > 0:	
+		var bullet_instance = BULLET.instance()
+		$shoot.play()
+		bullet_instance.rotation = rotation
+		bullet_instance.global_position = $Skeleton2D2/OrtaGovde/UstGovde/SolKol/SolEl/silah.global_position	
+		get_parent().add_child(bullet_instance)
+	
 	
 func _process_animation():
 	
