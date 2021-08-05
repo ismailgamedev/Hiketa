@@ -48,7 +48,7 @@ func movement():
 	move_and_slide(direction  * WALK_SPEED) 
 
 	# Mesafeyi kontrol etme
-	if distance < 2000 and distance > 200:
+	if distance < 5000 and distance > 200:
 		# Karakter pozisyonuna gore direction degiskeninin x degerini veriyoruz
 		if player:
 			direction.x = (player.position.x - position.x)
@@ -124,7 +124,7 @@ func die_check():
 	
 func _on_HurtBox_area_entered(area):
 	if area.is_in_group("Bullet"):
-		health -= 7
+		health -= 10
 		var blood_instance = blood.instance()
 		blood_instance.global_position = area.global_position
 		get_parent().add_child(blood_instance)
