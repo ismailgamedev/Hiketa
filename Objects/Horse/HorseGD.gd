@@ -3,7 +3,7 @@ extends KinematicBody2D
 const BULLET = preload("res://Objects/Bullet/Bullet.tscn")
 const Gravity = 25
 const ACCELERATION = 1000
-const MAX_SPEED = 250
+const MAX_SPEED = 200
 const JUMP_HEIGHT = -500
 const UP = Vector2 ( 0 , -1 )
 var motion = Vector2()

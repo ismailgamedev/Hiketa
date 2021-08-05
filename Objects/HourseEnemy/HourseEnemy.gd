@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 # Hız ve yer çekimi degeri
-const WALK_SPEED = 300
+export var WALK_SPEED = 500
 const GRAVITY = 25
 const BULLET = preload("res://Objects/Bullet/EnemyBullet.tscn")
 export(NodePath) var player 
@@ -48,7 +48,7 @@ func movement():
 	move_and_slide(direction  * WALK_SPEED) 
 
 	# Mesafeyi kontrol etme
-	if distance < 500 and distance > 200:
+	if distance < 2000 and distance > 200:
 		# Karakter pozisyonuna gore direction degiskeninin x degerini veriyoruz
 		if player:
 			direction.x = (player.position.x - position.x)
