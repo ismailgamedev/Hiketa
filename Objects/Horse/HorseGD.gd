@@ -61,6 +61,7 @@ func shoot():
 	if health > 0:	
 		var bullet_instance = BULLET.instance()
 		$shoot.play()
+		$Skeleton2D2/OrtaGovde/UstGovde/SolKol/SolEl/silah/shootParticle.emitting = true
 		bullet_instance.rotation = rotation
 		bullet_instance.global_position = $Skeleton2D2/OrtaGovde/UstGovde/SolKol/SolEl/silah.global_position	
 		get_parent().add_child(bullet_instance)

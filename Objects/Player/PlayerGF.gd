@@ -81,6 +81,7 @@ func shoot():
 		
 		var bullet_instance = BULLET.instance()
 		$shoot.play()
+		$"Skeleton2D/YariGovde/UstGovde/Sag Kol/Sag El/silah/shootParticle".restart()
 		bullet_instance.rotation = rotation
 		bullet_instance.global_position = $"Skeleton2D/YariGovde/UstGovde/Sag Kol/Sag El/silah".global_position	
 		get_parent().add_child(bullet_instance)
