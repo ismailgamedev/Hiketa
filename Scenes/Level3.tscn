@@ -1,10 +1,11 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Sprites/TX Tileset Ground Darken.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/TX Village Props.png" type="Texture" id=2]
 [ext_resource path="res://Paralaxbackground/ParallaxBackground.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/UI/Dialog.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/Horse/Horse.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/UI/HealthBar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Level3.gd" type="Script" id=7]
 
 [sub_resource type="TileSet" id=1]
@@ -454,3 +455,7 @@ margin_bottom = 140.0
 
 [node name="Horse" parent="." instance=ExtResource( 5 )]
 position = Vector2( 211.582, 126.788 )
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" parent="CanvasLayer2" instance=ExtResource( 6 )]
