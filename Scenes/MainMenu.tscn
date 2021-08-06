@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Fonts/Font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Objects/UI/styleButton.tres" type="StyleBox" id=2]
+[ext_resource path="res://Objects/UI/stylebuttonclick.tres" type="StyleBox" id=3]
+[ext_resource path="res://Objects/UI/stylebuttonUstunde.tres" type="StyleBox" id=4]
+[ext_resource path="res://Sprites/menuarkaplan.png" type="Texture" id=5]
+[ext_resource path="res://Objects/UI/SceneTraslitior.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/MainMenu.gd" type="Script" id=7]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.445435
+margin_right = -0.445435
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+
+[node name="Text" type="Label" parent="."]
+modulate = Color( 0.2, 0.2, 0.2, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -86.7083
+margin_top = -120.794
+margin_right = -48.7083
+margin_bottom = -110.794
+rect_scale = Vector2( 4.73237, 4.73237 )
+custom_fonts/font = ExtResource( 1 )
+text = "Hikate"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -127.0
+margin_top = 11.5407
+margin_right = 127.0
+margin_bottom = 100.541
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -128.418
+margin_top = -43.5
+margin_right = -16.4178
+margin_bottom = -5.49999
+rect_scale = Vector2( 2.26091, 2.26091 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="Buttons/VBoxContainer"]
+margin_right = 112.0
+margin_bottom = 10.0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "Play"
+
+[node name="Info" type="Button" parent="Buttons/VBoxContainer"]
+margin_top = 14.0
+margin_right = 112.0
+margin_bottom = 24.0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "Info"
+
+[node name="Exit" type="Button" parent="Buttons/VBoxContainer"]
+margin_top = 28.0
+margin_right = 112.0
+margin_bottom = 38.0
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "Exit"
+
+[node name="SceneTraslition" parent="." instance=ExtResource( 6 )]
+
+[connection signal="pressed" from="Buttons/VBoxContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/Info" to="." method="_on_Info_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]

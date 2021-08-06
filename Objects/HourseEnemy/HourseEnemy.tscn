@@ -8,10 +8,10 @@
 [ext_resource path="res://Objects/Horse/AtKemikler.png" type="Texture" id=6]
 [ext_resource path="res://Objects/HourseEnemy/HourseEnemy.gd" type="Script" id=7]
 
-[sub_resource type="RectangleShape2D" id=19]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.7951, 20.2884 )
 
-[sub_resource type="Animation" id=25]
+[sub_resource type="Animation" id=2]
 resource_name = "die"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Skeleton2D2/OrtaGovde/UstGovde:position")
@@ -134,7 +134,7 @@ tracks/9/keys = {
 "values": [ Vector2( 12.7499, -10.6501 ) ]
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=3]
 resource_name = "idle"
 loop = true
 tracks/0/type = "value"
@@ -606,7 +606,7 @@ tracks/38/keys = {
 "values": [ 13.5302, 19.6137 ]
 }
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=4]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -1246,36 +1246,37 @@ tracks/52/keys = {
 "values": [ 36.3221 ]
 }
 
-[sub_resource type="Gradient" id=22]
+[sub_resource type="Gradient" id=5]
 colors = PoolColorArray( 1, 0.963867, 0, 1, 1, 0.354492, 0, 1 )
 
-[sub_resource type="GradientTexture" id=16]
-gradient = SubResource( 22 )
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 5 )
 
-[sub_resource type="Curve" id=23]
+[sub_resource type="Curve" id=7]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=18]
-curve = SubResource( 23 )
+[sub_resource type="CurveTexture" id=8]
+curve = SubResource( 7 )
 
-[sub_resource type="ParticlesMaterial" id=24]
+[sub_resource type="ParticlesMaterial" id=9]
 flag_disable_z = true
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 180.0
 initial_velocity_random = 0.68
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale_curve = SubResource( 18 )
-color_ramp = SubResource( 16 )
+scale_curve = SubResource( 8 )
+color_ramp = SubResource( 6 )
 
 [node name="HourseEnemy" type="KinematicBody2D" groups=[
 "Enemy",
 ]]
+collision_layer = 2
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -0.8909, 19.2837 )
-shape = SubResource( 19 )
+shape = SubResource( 1 )
 
 [node name="polygons" type="Node2D" parent="."]
 position = Vector2( -27.3642, -9.01017 )
@@ -1559,50 +1560,42 @@ rest = Transform2D( 1, 0, 0, 1, 35.75, 0 )
 [node name="Buyun" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnGovde"]
 position = Vector2( 54.391, 0 )
 rotation = -0.992056
-scale = Vector2( 1, 1 )
 rest = Transform2D( 0.546971, -0.837152, 0.837152, 0.546971, 54.391, 0 )
 
 [node name="KafaA" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnGovde/Buyun"]
 position = Vector2( 63.2774, 7.64651 )
 rotation = 1.43141
-scale = Vector2( 1, 1 )
 rest = Transform2D( 0.138935, 0.990301, -0.990301, 0.138935, 63.2774, 7.64651 )
 default_length = 29.0
 
 [node name="OnSagBacak" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnGovde/Buyun"]
 position = Vector2( -9.77087, 18.7138 )
 rotation = 2.53509
-scale = Vector2( 1, 1 )
 rest = Transform2D( -0.821652, 0.56999, -0.56999, -0.821652, -9.77087, 18.7138 )
 
 [node name="OnSagDiz" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnGovde/Buyun/OnSagBacak"]
 position = Vector2( 44.331, 1.23058 )
 rotation = -0.179867
-scale = Vector2( 1, 1 )
 rest = Transform2D( 0.983867, -0.178899, 0.178899, 0.983867, 44.331, 1.23058 )
 
 [node name="OnSagAyak" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnGovde/Buyun/OnSagBacak/OnSagDiz"]
 position = Vector2( 28.4319, 0.684067 )
 rotation = -0.678073
-scale = Vector2( 1, 1 )
 rest = Transform2D( 0.778783, -0.627294, 0.627294, 0.778783, 28.4319, 0.684067 )
 
 [node name="ArkaSagBacak" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnGovde/Buyun"]
 position = Vector2( -1.17766, 0.0991516 )
 rotation = 2.53509
-scale = Vector2( 1, 1 )
 rest = Transform2D( -0.821652, 0.56999, -0.56999, -0.821652, -1.17766, 0.0991516 )
 
 [node name="ArkaSagDiz" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnGovde/Buyun/ArkaSagBacak"]
 position = Vector2( 38.2425, 3.66438 )
 rotation = -0.179867
-scale = Vector2( 1, 1 )
 rest = Transform2D( 0.983867, -0.178899, 0.178899, 0.983867, 38.2425, 3.66438 )
 
 [node name="ArkaSagAyak" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnGovde/Buyun/ArkaSagBacak/ArkaSagDiz"]
 position = Vector2( 39.9341, 3.77697 )
 rotation = -0.678073
-scale = Vector2( 1, 1 )
 rest = Transform2D( 0.778783, -0.627294, 0.627294, 0.778783, 39.9341, 3.77697 )
 
 [node name="OnSolBacak" type="Bone2D" parent="Skeleton2D/ArkaGovde"]
@@ -1613,13 +1606,11 @@ rest = Transform2D( 2.22127e-06, 1, -1, 2.22127e-06, 0, 18.9595 )
 [node name="OnSolDiz" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnSolBacak"]
 position = Vector2( 42.3076, 3.17495 )
 rotation = -0.178922
-scale = Vector2( 1, 1 )
 rest = Transform2D( 0.984036, -0.17797, 0.17797, 0.984036, 42.3076, 3.17495 )
 
 [node name="OnSolAyak" type="Bone2D" parent="Skeleton2D/ArkaGovde/OnSolBacak/OnSolDiz"]
 position = Vector2( 27.3321, 1.9932 )
 rotation = -0.532439
-scale = Vector2( 1, 1 )
 rest = Transform2D( 0.861572, -0.507636, 0.507636, 0.861572, 27.3321, 1.9932 )
 
 [node name="ArkaSolBacak" type="Bone2D" parent="Skeleton2D/ArkaGovde"]
@@ -1630,13 +1621,11 @@ rest = Transform2D( 2.22127e-06, 1, -1, 2.22127e-06, 7.99036, 0.870987 )
 [node name="ArkaSolDiz" type="Bone2D" parent="Skeleton2D/ArkaGovde/ArkaSolBacak"]
 position = Vector2( 39.6288, 3.47258 )
 rotation = -0.178922
-scale = Vector2( 1, 1 )
 rest = Transform2D( 0.984036, -0.17797, 0.17797, 0.984036, 39.6288, 3.47258 )
 
 [node name="ArkaSolAyak" type="Bone2D" parent="Skeleton2D/ArkaGovde/ArkaSolBacak/ArkaSolDiz"]
 position = Vector2( 40.0534, 3.11898 )
 rotation = -0.771516
-scale = Vector2( 1, 1 )
 rest = Transform2D( 0.716855, -0.697223, 0.697223, 0.716855, 40.0534, 3.11898 )
 
 [node name="ArkaKuyruk" type="Bone2D" parent="Skeleton2D/ArkaGovde"]
@@ -1647,14 +1636,13 @@ rest = Transform2D( -0.704225, 0.709977, -0.709977, -0.704225, -16.2589, -14.477
 [node name="OnKuyruk" type="Bone2D" parent="Skeleton2D/ArkaGovde/ArkaKuyruk"]
 position = Vector2( 36.5832, -2.52221 )
 rotation = -0.0576798
-scale = Vector2( 1, 1 )
 rest = Transform2D( 0.998337, -0.0576479, 0.0576479, 0.998337, 38.6907, -3.21518 )
 default_length = 38.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/die = SubResource( 25 )
-anims/idle = SubResource( 20 )
-anims/walk = SubResource( 21 )
+anims/die = SubResource( 2 )
+anims/idle = SubResource( 3 )
+anims/walk = SubResource( 4 )
 
 [node name="Skeleton2D2" type="Skeleton2D" parent="."]
 position = Vector2( -27.3642, -9.01017 )
@@ -1706,7 +1694,7 @@ amount = 14
 lifetime = 0.3
 one_shot = true
 explosiveness = 1.0
-process_material = SubResource( 24 )
+process_material = SubResource( 9 )
 
 [node name="SagKol" type="Bone2D" parent="Skeleton2D2/OrtaGovde/UstGovde"]
 position = Vector2( 14.3098, 11.1748 )

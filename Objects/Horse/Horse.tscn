@@ -13,7 +13,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 35.1966, 18.2704 )
 
-[sub_resource type="Animation" id=24]
+[sub_resource type="Animation" id=2]
 resource_name = "falling"
 length = 0.1
 tracks/0/type = "value"
@@ -101,8 +101,7 @@ tracks/6/keys = {
 "values": [ Vector2( 68.4129, -34.0023 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "idle"
+[sub_resource type="Animation" id=3]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Skeleton2D/ArkaGovde:rotation_degrees")
@@ -573,7 +572,7 @@ tracks/38/keys = {
 "values": [ 13.5302, 19.6137 ]
 }
 
-[sub_resource type="Animation" id=25]
+[sub_resource type="Animation" id=4]
 resource_name = "jumping"
 length = 0.1
 tracks/0/type = "value"
@@ -709,7 +708,7 @@ tracks/10/keys = {
 "values": [ 11.6035 ]
 }
 
-[sub_resource type="Animation" id=26]
+[sub_resource type="Animation" id=5]
 resource_name = "landing"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Skeleton2D2/OrtaGovde:position")
@@ -724,7 +723,7 @@ tracks/0/keys = {
 "values": [ Vector2( 67.4417, -30.6432 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=6]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -1388,27 +1387,27 @@ tracks/54/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="Gradient" id=19]
+[sub_resource type="Gradient" id=7]
 colors = PoolColorArray( 1, 0.963867, 0, 1, 1, 0.354492, 0, 1 )
 
-[sub_resource type="GradientTexture" id=22]
-gradient = SubResource( 19 )
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 7 )
 
-[sub_resource type="Curve" id=20]
+[sub_resource type="Curve" id=9]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=23]
-curve = SubResource( 20 )
+[sub_resource type="CurveTexture" id=10]
+curve = SubResource( 9 )
 
-[sub_resource type="ParticlesMaterial" id=21]
+[sub_resource type="ParticlesMaterial" id=11]
 flag_disable_z = true
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 180.0
 initial_velocity_random = 0.68
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale_curve = SubResource( 23 )
-color_ramp = SubResource( 22 )
+scale_curve = SubResource( 10 )
+color_ramp = SubResource( 8 )
 
 [node name="Horse" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -1783,11 +1782,11 @@ rest = Transform2D( 0.998337, -0.0576479, 0.0576479, 0.998337, 38.6907, -3.21518
 default_length = 38.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/falling = SubResource( 24 )
-anims/idle = SubResource( 2 )
-anims/jumping = SubResource( 25 )
-anims/landing = SubResource( 26 )
-anims/walk = SubResource( 3 )
+anims/falling = SubResource( 2 )
+anims/idle = SubResource( 3 )
+anims/jumping = SubResource( 4 )
+anims/landing = SubResource( 5 )
+anims/walk = SubResource( 6 )
 
 [node name="Skeleton2D2" type="Skeleton2D" parent="."]
 position = Vector2( -26.0279, -9.01017 )
@@ -1839,7 +1838,7 @@ amount = 14
 lifetime = 0.3
 one_shot = true
 explosiveness = 1.0
-process_material = SubResource( 21 )
+process_material = SubResource( 11 )
 
 [node name="SagKol" type="Bone2D" parent="Skeleton2D2/OrtaGovde/UstGovde"]
 position = Vector2( 8.39407, 7.48659 )
