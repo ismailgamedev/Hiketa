@@ -13,50 +13,49 @@
 radius = 7.15412
 height = 55.3843
 
-[sub_resource type="Gradient" id=15]
+[sub_resource type="Gradient" id=2]
 colors = PoolColorArray( 1, 0.963867, 0, 1, 1, 0.354492, 0, 1 )
 
-[sub_resource type="GradientTexture" id=20]
-gradient = SubResource( 15 )
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
 
-[sub_resource type="Curve" id=17]
+[sub_resource type="Curve" id=4]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=21]
-curve = SubResource( 17 )
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
 
-[sub_resource type="ParticlesMaterial" id=19]
+[sub_resource type="ParticlesMaterial" id=6]
 flag_disable_z = true
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 180.0
 initial_velocity_random = 0.68
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale_curve = SubResource( 21 )
-color_ramp = SubResource( 20 )
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 3 )
 
-[sub_resource type="AnimationNodeAnimation" id=2]
+[sub_resource type="AnimationNodeAnimation" id=7]
 animation = "idle"
 
-[sub_resource type="AnimationNodeAnimation" id=3]
+[sub_resource type="AnimationNodeAnimation" id=8]
 animation = "walk"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=4]
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=5]
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
 
-[sub_resource type="AnimationNodeStateMachine" id=6]
-states/Idle/node = SubResource( 2 )
+[sub_resource type="AnimationNodeStateMachine" id=11]
+states/Idle/node = SubResource( 7 )
 states/Idle/position = Vector2( 270, 37 )
-states/Walk/node = SubResource( 3 )
+states/Walk/node = SubResource( 8 )
 states/Walk/position = Vector2( 270, 154 )
-transitions = [ "Idle", "Walk", SubResource( 4 ), "Walk", "Idle", SubResource( 5 ) ]
+transitions = [ "Idle", "Walk", SubResource( 9 ), "Walk", "Idle", SubResource( 10 ) ]
 start_node = "Idle"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=7]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=12]
 
-[sub_resource type="Animation" id=8]
-resource_name = "death"
+[sub_resource type="Animation" id=13]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Skeleton2D/YariGovde:position")
 tracks/0/interp = 1
@@ -322,7 +321,7 @@ tracks/21/keys = {
 "values": [ Vector2( 15.2739, -0.960582 ), Vector2( 15.2739, -0.960582 ), Vector2( 15.2739, -0.960582 ), Vector2( 15.2739, -0.960582 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=14]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Skeleton2D/YariGovde/Sag Bacak:rotation_degrees")
@@ -421,7 +420,7 @@ tracks/7/keys = {
 "values": [ 12.4494 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=15]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Skeleton2D/YariGovde/UstGovde/Sol Kol:position")
@@ -544,7 +543,7 @@ tracks/9/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=16]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Skeleton2D/YariGovde/Sol Bacak/Sol Ayak:rotation_degrees")
@@ -643,7 +642,7 @@ tracks/7/keys = {
 "values": [ 0.0, 12.5584 ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=17]
 length = 0.1
 loop = true
 tracks/0/type = "value"
@@ -755,7 +754,7 @@ tracks/8/keys = {
 "values": [ -89.9991 ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=18]
 length = 1.2
 loop = true
 tracks/0/type = "value"
@@ -867,7 +866,7 @@ tracks/8/keys = {
 "values": [ -33.2048 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=14]
+[sub_resource type="CapsuleShape2D" id=19]
 radius = 8.19659
 height = 56.5548
 
@@ -1031,7 +1030,7 @@ amount = 14
 lifetime = 0.3
 one_shot = true
 explosiveness = 1.0
-process_material = SubResource( 19 )
+process_material = SubResource( 6 )
 
 [node name="Sol Kol" type="Bone2D" parent="Skeleton2D/YariGovde/UstGovde"]
 position = Vector2( 6.1424, -5.27817 )
@@ -1074,24 +1073,24 @@ rest = Transform2D( 0.995599, -0.0937131, 0.0937131, 0.995599, 15.2739, -0.96058
 default_length = 14.0
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 6 )
+tree_root = SubResource( 11 )
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 7 )
+parameters/playback = SubResource( 12 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/death = SubResource( 8 )
-anims/falling = SubResource( 9 )
-anims/idle = SubResource( 10 )
-anims/jumping = SubResource( 11 )
-anims/landing = SubResource( 12 )
-anims/walk = SubResource( 13 )
+anims/death = SubResource( 13 )
+anims/falling = SubResource( 14 )
+anims/idle = SubResource( 15 )
+anims/jumping = SubResource( 16 )
+anims/landing = SubResource( 17 )
+anims/walk = SubResource( 18 )
 
 [node name="HurtBox" type="Area2D" parent="."]
 position = Vector2( -0.140305, -1.68369 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2( -0.35936, 14.0019 )
-shape = SubResource( 14 )
+shape = SubResource( 19 )
 
 [node name="Interface" type="CanvasLayer" parent="."]
 
