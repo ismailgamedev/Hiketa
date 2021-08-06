@@ -31,7 +31,8 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 
 func _on_EnemyBullet_area_entered(area):
-	self.queue_free()
+	if not area.is_in_group("Enemy"):
+		self.queue_free()
 
 
 func _on_EnemyBullet_body_entered(body):

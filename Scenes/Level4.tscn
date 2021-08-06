@@ -1,12 +1,17 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Objects/UI/Dialog.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Paralaxbackground/ParallaxBackground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/TX Tileset Ground Darken.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/TX Village Props.png" type="Texture" id=4]
 [ext_resource path="res://Objects/Player/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sprites/boss.png" type="Texture" id=6]
+[ext_resource path="res://Objects/Enemy/DusmanKemik;eri.png.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/silah.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/silah.gd" type="Script" id=9]
+[ext_resource path="res://Sounds/shootSound.wav" type="AudioStream" id=10]
 
-[sub_resource type="TileSet" id=4]
+[sub_resource type="TileSet" id=1]
 0/name = "TX Village Props.png 0"
 0/texture = ExtResource( 4 )
 0/tex_offset = Vector2( 0, 0 )
@@ -161,11 +166,25 @@
 11/shape_one_way_margin = 0.0
 11/shapes = [  ]
 11/z_index = 0
+12/name = "TX Village Props.png 12"
+12/texture = ExtResource( 4 )
+12/tex_offset = Vector2( 0, 0 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 0, 142, 89, 92 )
+12/tile_mode = 0
+12/occluder_offset = Vector2( 0, 0 )
+12/navigation_offset = Vector2( 0, 0 )
+12/shape_offset = Vector2( 0, 0 )
+12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+12/shape_one_way = false
+12/shape_one_way_margin = 0.0
+12/shapes = [  ]
+12/z_index = 0
 
-[sub_resource type="ConvexPolygonShape2D" id=3]
+[sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
-[sub_resource type="TileSet" id=5]
+[sub_resource type="TileSet" id=3]
 1/name = "TX Tileset Ground Darken.png 1"
 1/texture = ExtResource( 3 )
 1/tex_offset = Vector2( 0, 0 )
@@ -185,171 +204,178 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 1/navigation_offset = Vector2( 0, 0 )
 1/shape_offset = Vector2( 0, 0 )
 1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape = SubResource( 3 )
+1/shape = SubResource( 2 )
 1/shape_one_way = false
 1/shape_one_way_margin = 1.0
 1/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 1, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 2, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 3, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 3, 3 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 2, 3 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 1, 3 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 0, 3 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 1, 6 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 0, 1 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 1, 1 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 2, 1 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 3, 1 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 3, 2 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 2, 2 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 1, 2 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 0, 2 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 1, 4 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 2, 4 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 2, 5 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 2, 6 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 0, 6 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 0, 5 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 }, {
 "autotile_coord": Vector2( 0, 4 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 1/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 46.7866, 110.974 )
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 30.3527
+height = 1.92171
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 31.3902, 35.1405 )
 
 [node name="Level4" type="Node2D"]
 
 [node name="Bitkiler" type="TileMap" parent="."]
 z_index = -2
-tile_set = SubResource( 4 )
+tile_set = SubResource( 1 )
 cell_size = Vector2( 5, 5 )
 collision_use_kinematic = true
 format = 1
-tile_data = PoolIntArray( 1310629, 1, 0, 1310637, 1, 0, 1310660, 1, 0, 1310669, 1, 0, 1310701, 1, 0, 3080136, 2, 0, 3080168, 2, 0 )
+tile_data = PoolIntArray( 1310629, 1, 0, 1310637, 1, 0, 1310660, 1, 0, 1310669, 1, 0, 1310701, 1, 0, 2162779, 12, 0, 3080136, 2, 0, 3080168, 2, 0 )
 
 [node name="Ground" type="TileMap" parent="."]
-tile_set = SubResource( 5 )
+tile_set = SubResource( 3 )
 cell_size = Vector2( 32, 32 )
 collision_use_kinematic = true
 collision_layer = 2
@@ -379,4 +405,164 @@ position = Vector2( -165.276, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightEnd"]
 position = Vector2( 89.093, 153.193 )
+shape = SubResource( 4 )
+
+[node name="Base" type="StaticBody2D" parent="."]
+position = Vector2( 758.407, 140.007 )
+
+[node name="polyons" type="Node2D" parent="Base"]
+position = Vector2( -46.9482, 67.746 )
+rotation = 3.14159
+scale = Vector2( 2, -2 )
+z_index = -1
+
+[node name="sag bacak" type="Polygon2D" parent="Base/polyons"]
+position = Vector2( -16.9101, -75.8876 )
+scale = Vector2( 1, 1.0094 )
+texture = ExtResource( 7 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 21.25, 43.4966, 16.4375, 43.2466, 16.625, 51.9341, 16.4375, 59.7466, 22.125, 59.9966, 21.8125, 52.1841 )
+uv = PoolVector2Array( 21.25, 43.4966, 16.4375, 43.2466, 16.625, 51.9341, 16.4375, 59.7466, 22.125, 59.9966, 21.8125, 52.1841 )
+polygons = [ PoolIntArray( 0, 3, 2, 1 ), PoolIntArray( 0, 5, 4, 3 ) ]
+bones = [ NodePath("YariGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sag Kol"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sag Kol/Sag El"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sol Kol"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sol Kol/Sol EL"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Kafa"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/Sol Bacak"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/Sol Bacak/Sol Ayak"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/Sag Bacak"), PoolRealArray( 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ), NodePath("YariGovde/Sag Bacak/Sag Ayak"), PoolRealArray( 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="sol bacak" type="Polygon2D" parent="Base/polyons"]
+position = Vector2( -15.0036, -75.2373 )
+scale = Vector2( 1.00777, 1.00025 )
+texture = ExtResource( 7 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 8.625, 60, 14.625, 59.875, 15.8065, 41.5555, 8.27527, 40.5557 )
+uv = PoolVector2Array( 8.625, 60, 14.625, 59.875, 15.75, 41.875, 8.3125, 40.9375 )
+polygons = [ PoolIntArray( 2, 3, 0, 1 ) ]
+bones = [ NodePath("YariGovde"), PoolRealArray( 0, 0, 0.5, 0 ), NodePath("YariGovde/UstGovde"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sag Kol"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sag Kol/Sag El"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sol Kol"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sol Kol/Sol EL"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Kafa"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/Sol Bacak"), PoolRealArray( 1, 1, 1, 1 ), NodePath("YariGovde/Sol Bacak/Sag Ayak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/Sag Bacak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/Sag Bacak/Sol Ayak"), PoolRealArray( 0, 0, 0, 0 ) ]
+
+[node name="sag ayak" type="Polygon2D" parent="Base/polyons"]
+position = Vector2( -16.9063, -77.7909 )
+scale = Vector2( 1, 1.00744 )
+texture = ExtResource( 7 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 22.25, 77.2466, 22.0625, 60.5591, 17.0625, 60.3716, 17.1875, 77.5591 )
+uv = PoolVector2Array( 22.25, 77.2466, 22.0625, 60.5591, 17.0625, 60.3716, 17.1875, 77.5591 )
+polygons = [ PoolIntArray( 1, 0, 3, 2 ) ]
+bones = [ NodePath("YariGovde"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sag Kol"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sag Kol/Sag El"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sol Kol"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sol Kol/Sol EL"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Kafa"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/Sol Bacak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/Sol Bacak/Sol Ayak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/Sag Bacak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/Sag Bacak/Sag Ayak"), PoolRealArray( 0.5, 0.5, 0.5, 0.5 ) ]
+
+[node name="govde" type="Polygon2D" parent="Base/polyons"]
+position = Vector2( -15.9421, -72.1829 )
+scale = Vector2( 1, 0.998671 )
+z_index = 1
+texture = ExtResource( 7 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 21, 20.4966, 9.8125, 20.4341, 9.8125, 29.4966, 9.8125, 38.4341, 12.125, 41.4341, 21.0625, 41.6841, 20.875, 29.2466, 20.9142, 26.5016 )
+uv = PoolVector2Array( 21, 20.4966, 9.8125, 20.4341, 9.8125, 29.4966, 9.8125, 38.4341, 12.125, 41.4341, 21.0625, 41.6841, 20.875, 29.2466, 20.9142, 26.5016 )
+polygons = [ PoolIntArray( 0, 1, 2, 6 ), PoolIntArray( 2, 3, 4, 5, 6 ) ]
+bones = [ NodePath("YariGovde"), PoolRealArray( 0, 0, 1, 1, 1, 1, 1, 0 ), NodePath("YariGovde/UstGovde"), PoolRealArray( 1, 1, 1, 0, 0, 0, 1, 1 ), NodePath("YariGovde/UstGovde/Sag Kol"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sag Kol/Sag El"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sol Kol"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sol Kol/Sol EL"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Kafa"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/Sol Bacak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/Sol Bacak/Sol Ayak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/Sag Bacak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/Sag Bacak/Sag Ayak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="Sol kol" type="Polygon2D" parent="Base/polyons"]
+position = Vector2( -11.2161, -72.058 )
+z_index = 1
+texture = ExtResource( 7 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 6.4114, 22.2689, 5.04421, 22.2142, 1.74401, 27.8217, 1.70598, 34.3282, 4.55064, 34.2691, 4.56504, 32.3454, 5.50131, 32.2931, 5.61068, 29.2852, 6.70443, 29.0821 )
+uv = PoolVector2Array( 6.0625, 22.4375, 4.75, 22.375, 1.4375, 28, 1.4375, 34.5625, 4.25, 34.4375, 4.25, 32.5, 5.25, 32.4375, 5.3125, 29.375, 6.375, 29.1875 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8 ) ]
+bones = [ NodePath("YariGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sag Kol"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sag Kol/Sag El"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sol Kol"), PoolRealArray( 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ), NodePath("YariGovde/UstGovde/Sol Kol/Sol EL"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Kafa"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/Sol Bacak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/Sol Bacak/Sol Ayak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/Sag Bacak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/Sag Bacak/Sag Ayak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="Sol el" type="Polygon2D" parent="Base/polyons"]
+position = Vector2( -10.9342, -74.2517 )
+z_index = 1
+texture = ExtResource( 7 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 4.15409, 35.6961, 0.754425, 35.7274, 0.273441, 39.8627, 1.49843, 44.9158, 2.625, 51.0625, 5.0625, 53.6875, 6.375, 53.6875, 7.5, 48.8125, 6.0625, 47.1875, 4.5625, 47.375 )
+uv = PoolVector2Array( 4.125, 35.6875, 0.75, 35.75, 0.5, 40.0625, 1.4375, 44.9375, 2.625, 51.0625, 5.0625, 53.6875, 6.375, 53.6875, 7.5, 48.8125, 6.0625, 47.1875, 4.5625, 47.375 )
+polygons = [ PoolIntArray( 9, 4, 5, 6, 7, 8 ), PoolIntArray( 4, 3, 2, 1, 0, 9 ) ]
+bones = [ NodePath("YariGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sag Kol"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sag Kol/Sag El"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sol Kol"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sol Kol/Sol EL"), PoolRealArray( 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5 ), NodePath("YariGovde/UstGovde/Kafa"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/Sol Bacak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/Sol Bacak/Sol Ayak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/Sag Bacak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/Sag Bacak/Sag Ayak"), PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="sol ayak" type="Polygon2D" parent="Base/polyons"]
+position = Vector2( -14.9413, -77.2532 )
+texture = ExtResource( 7 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 12.7741, 60.4333, 8.10295, 60.2427, 8.38894, 78.6411, 15.1573, 78.2598 )
+uv = PoolVector2Array( 12.7741, 60.4333, 8.10295, 60.2427, 8.38894, 78.6411, 15.1573, 78.2598 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+bones = [ NodePath("YariGovde"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sag Kol"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sag Kol/Sag El"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sol Kol"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sol Kol/Sol EL"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Kafa"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/Sol Bacak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/Sol Bacak/Sol Ayak"), PoolRealArray( 0.5, 0.5, 0.5, 0.5 ), NodePath("YariGovde/Sag Bacak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/Sag Bacak/Sag Ayak"), PoolRealArray( 0, 0, 0, 0 ) ]
+
+[node name="sag kol" type="Polygon2D" parent="Base/polyons"]
+position = Vector2( 44.3013, -60.7322 )
+rotation = 1.96009
+texture = ExtResource( 7 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 28.375, 22.4375, 25.25, 22.3125, 25.625, 34.1875, 28.625, 34.3125 )
+uv = PoolVector2Array( 28.375, 22.4375, 25.25, 22.3125, 25.625, 34.1875, 28.625, 34.3125 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+bones = [ NodePath("YariGovde"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sag Kol"), PoolRealArray( 1, 1, 1, 1 ), NodePath("YariGovde/UstGovde/Sag Kol/Sag El"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sol Kol"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sol Kol/Sol EL"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Kafa"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/Sol Bacak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/Sol Bacak/Sol Ayak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/Sag Bacak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/Sag Bacak/Sag Ayak"), PoolRealArray( 0, 0, 0, 0 ) ]
+
+[node name="sag el" type="Polygon2D" parent="Base/polyons"]
+position = Vector2( -31.0327, -34.1189 )
+rotation = -1.13979
+texture = ExtResource( 7 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 29.584, 35.5932, 24.7304, 35.4391, 24.9615, 46.379, 21.8028, 48.7673, 23.8829, 54.0832, 28.6595, 53.2357 )
+uv = PoolVector2Array( 29.584, 35.5932, 24.7304, 35.4391, 24.9615, 46.379, 21.8028, 48.7673, 23.8829, 54.0832, 28.6595, 53.2357 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ) ]
+bones = [ NodePath("YariGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sag Kol"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sag Kol/Sag El"), PoolRealArray( 1, 1, 1, 1, 1, 1 ), NodePath("YariGovde/UstGovde/Sol Kol"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sol Kol/Sol EL"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Kafa"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/Sol Bacak"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/Sol Bacak/Sol Ayak"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/Sag Bacak"), PoolRealArray( 0, 0, 0, 0, 0, 0 ), NodePath("YariGovde/Sag Bacak/Sag Ayak"), PoolRealArray( 0, 0, 0, 0, 0, 0 ) ]
+
+[node name="kafa" type="Polygon2D" parent="Base/polyons"]
+position = Vector2( -15.8794, -70.2772 )
+texture = ExtResource( 7 )
+skeleton = NodePath("../../Skeleton2D")
+polygon = PoolVector2Array( 20.6875, 6.875, 9.5625, 7.125, 12.3125, 20.5, 21.375, 20.375 )
+uv = PoolVector2Array( 20.6875, 6.875, 9.5625, 7.125, 12.3125, 20.5, 21.375, 20.375 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+bones = [ NodePath("YariGovde"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sag Kol"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sag Kol/Sag El"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sol Kol"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Sol Kol/Sol EL"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/UstGovde/Kafa"), PoolRealArray( 1, 1, 1, 1 ), NodePath("YariGovde/Sol Bacak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/Sol Bacak/Sol Ayak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/Sag Bacak"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovde/Sag Bacak/Sag Ayak"), PoolRealArray( 0, 0, 0, 0 ) ]
+
+[node name="HitBox" type="Area2D" parent="Base" groups=[
+"Enemy",
+]]
+position = Vector2( -78.4218, -9.6776 )
+scale = Vector2( 1, 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Base/HitBox"]
+position = Vector2( 0.588928, -9.60961 )
+rotation = 1.86265e-09
+scale = Vector2( 1, 1 )
+shape = SubResource( 5 )
+
+[node name="silah" type="Sprite" parent="Base"]
+position = Vector2( -71.6663, -1.50302 )
+rotation = 0.0308014
+scale = Vector2( 2.291, -2.291 )
+texture = ExtResource( 8 )
+script = ExtResource( 9 )
+player = NodePath("../../Player")
+
+[node name="Position2D" type="Position2D" parent="Base/silah"]
+position = Vector2( -14.5083, -1.51388 )
+
+[node name="Timer" type="Timer" parent="Base/silah"]
+wait_time = 0.2
+autostart = true
+__meta__ = {
+"_editor_description_": "dddddddddddddd"
+}
+
+[node name="shoot" type="AudioStreamPlayer2D" parent="Base/silah"]
+position = Vector2( 0.471939, 9.67472 )
+stream = ExtResource( 10 )
+
+[node name="boss" type="Sprite" parent="Base"]
+position = Vector2( -20.5527, -12.7985 )
+scale = Vector2( 2.57857, 2.57857 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Base"]
+polygon = PoolVector2Array( -41.9576, 19.9162, -105.669, 20.8601, -106.828, 115.758, 97.2639, 116.663, 97.3482, -123.591, -108.858, -124.163, -107.857, -55.0846, -43.1169, -54.4172 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 120.208, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 385.99, 221.064 )
 shape = SubResource( 6 )
+
+[connection signal="area_entered" from="Base/HitBox" to="Base/silah" method="_on_HitBox_area_entered"]
+[connection signal="timeout" from="Base/silah/Timer" to="Base/silah" method="_on_Timer_timeout"]

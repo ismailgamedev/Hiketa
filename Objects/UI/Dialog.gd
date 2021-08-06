@@ -38,8 +38,10 @@ func _input(event):
 		if get_tree().get_current_scene().get_name() == "Level4":	
 			ucuncu += 1
 			if ucuncu == 1:
+				Text.text = "Iste burada"
+				name_text.text = "Hektor"
+			if ucuncu == 2:
 				dialog_panel.visible = false
-
 func _process(delta):
 		if ikinci >= 1:
 			dialog_panel.visible = true
