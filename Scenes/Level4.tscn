@@ -519,24 +519,22 @@ bones = [ NodePath("YariGovde"), PoolRealArray( 0, 0, 0, 0 ), NodePath("YariGovd
 "Enemy",
 ]]
 position = Vector2( -78.4218, -9.6776 )
-scale = Vector2( 1, 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Base/HitBox"]
 position = Vector2( 0.588928, -9.60961 )
 rotation = 1.86265e-09
-scale = Vector2( 1, 1 )
 shape = SubResource( 5 )
 
 [node name="silah" type="Sprite" parent="Base"]
 position = Vector2( -71.6663, -1.50302 )
 rotation = 0.0308014
-scale = Vector2( 2.291, -2.291 )
+scale = Vector2( -2.291, -2.291 )
 texture = ExtResource( 8 )
 script = ExtResource( 9 )
 player = NodePath("../../Player")
 
 [node name="Position2D" type="Position2D" parent="Base/silah"]
-position = Vector2( -14.5083, -1.51388 )
+position = Vector2( -18.5913, -1.72147 )
 
 [node name="Timer" type="Timer" parent="Base/silah"]
 wait_time = 0.2
@@ -555,6 +553,7 @@ scale = Vector2( 2.57857, 2.57857 )
 texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Base"]
+position = Vector2( 0.445435, 0.8909 )
 polygon = PoolVector2Array( -41.9576, 19.9162, -105.669, 20.8601, -106.828, 115.758, 97.2639, 116.663, 97.3482, -123.591, -108.858, -124.163, -107.857, -55.0846, -43.1169, -54.4172 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

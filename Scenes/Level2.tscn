@@ -614,7 +614,7 @@ margin_right = 210.0
 margin_bottom = 140.0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 3936.84, 152.524 )
+position = Vector2( 142.021, 201.444 )
 
 [connection signal="body_entered" from="LeftEnd" to="." method="_on_LeftEnd_body_entered"]
 [connection signal="area_entered" from="HourseArea" to="CanvasLayer/Dialog" method="_on_HourseArea_area_entered"]

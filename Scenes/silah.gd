@@ -10,7 +10,8 @@ func die_check():
 		deathok = true
 
 func _physics_process(delta):
-	look_at(player.global_position)
+	if deathok == false:
+		look_at(player.global_position)
 	die_check()
 	print(health)
 
@@ -26,7 +27,7 @@ func shoot():
 		var bullet_instance = BULLET.instance()
 		$shoot.play()
 		bullet_instance.rotation = rotation
-		bullet_instance.global_position = global_position
+		bullet_instance.global_position = $Position2D.global_position
 		get_parent().get_parent().add_child(bullet_instance)
 
 func _on_Timer_timeout():
@@ -39,4 +40,5 @@ func _on_Timer_timeout():
 
 func _on_HitBox_area_entered(area):
 	if area.is_in_group("Bullet"):
-		health -= 10
+		health -= 3
+
