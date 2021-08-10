@@ -36,4 +36,5 @@ func _on_EnemyBullet_area_entered(area):
 
 
 func _on_EnemyBullet_body_entered(body):
-	self.queue_free()
+	if not body.is_in_group("Enemy"):
+		self.queue_free()

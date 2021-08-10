@@ -40,5 +40,5 @@ func _on_Timer_timeout():
 
 func _on_HitBox_area_entered(area):
 	if area.is_in_group("Bullet"):
-		health -= 3
+		health -= 4
 
